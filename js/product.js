@@ -19,6 +19,8 @@ var activeLayer = 0;
 var currentScrollX = 0;
 var lastScrollX = 0;
 
+var isAnimatingTo = false;
+
 jQuery(document).ready(function(){
 
     //  initial fancybox();
@@ -40,7 +42,7 @@ jQuery(document).ready(function(){
         currentScrollX = jQuery(window).scrollTop();
 
         console.log(ScrollState());
-
+        
         console.log('currentScrollX = ' + currentScrollX + ' ' + ' lastScrollX = ' + lastScrollX);
 
         if ($(window).scrollTop() > 75) {
@@ -54,7 +56,20 @@ jQuery(document).ready(function(){
         console.log($(window).scrollTop());
 
         if (between(0, 1000, jQuery(window).scrollTop())) {
-            jQuery("body").animate({ scrollTop: Goto[1] }, 1000);
+
+            if (isAnimatingTo == false)
+            jQuery("body").animate({"scrollTop" : Goto[1]}, 
+                {quenu : false, 
+                    step : function () {
+                        console.log("step");
+                        isAnimatingTo = true;
+                    }, 
+                    duration : 600, complete : function(){
+                        console.log('complete');
+                    }
+                }
+            );
+
         }
 
         // if (between(1001, 5000, jQuery(window).scrollTop())) {
