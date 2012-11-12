@@ -18,6 +18,9 @@ textarea {
     color: #222;
 }
 
+a{
+    outline: none;
+}
 body {
     font-size: 1em;
     line-height: 1.4;
@@ -629,6 +632,10 @@ footer{
     height: auto;
     float: left;
     overflow: hidden;
+    display: none;
+}
+#tabContentWrap li.active{
+    display: block;
 }
 .service #tabContentWrap li{
     background: url(../img/formArdic.png) no-repeat right bottom;
@@ -853,6 +860,9 @@ footer{
 }
 .distributors #tabContentWrap li .mapInfo div span{
     font-weight: bold;
+}
+.technical-content{
+    position: relative;
 }
 
 
