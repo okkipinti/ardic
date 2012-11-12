@@ -154,8 +154,9 @@
                                 <h4>Taipei, Taiwan</h4>
                                 <p>4F, No. 415, RuiGuang Rd., Neihu District, Taipei, Taiwan 11492</p>
                                 <div class="hiddenInfo">
-                                    <div class="map" id="map_taipei" style="width:646px; height:145px;">
-                                    </div>
+                                    <a target="blank" href="https://maps.google.com.tw/maps?q=No. 415, RuiGuang Rd., Neihu District, Taipei, Taiwan&ie=UTF8&sll=25.077725,121.572352&sspn=0.008464,0.016512&brcurrent=3,0x0:0x0,0&hnear=No. 415, RuiGuang Rd., Neihu District, Taipei, Taiwan&t=m&z=16">
+                                        <img src="http://maps.google.com/maps/api/staticmap?center=No. 415, RuiGuang Rd., Neihu District, Taipei, Taiwan&zoom=14&size=640x145&markers=icon:http://public.kamia.com/mapPin.png%7C台灣省台中市西屯路二段245號&maptype=roadmap&sensor=false" alt="map">
+                                    </a>
 
                                     <div class="mapInfo clearfix">
                                         <div>
@@ -391,48 +392,7 @@
         // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
         // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
         // s.parentNode.insertBefore(g,s)}(document,'script'));
-        // function initialize() {
-        //     var mapOptions = {
-        //       // scaleControl: true,
-        //       center: new google.maps.LatLng(-33, 151),
-        //       zoom: 10,
-        //       mapTypeId: google.maps.MapTypeId.ROADMAP
-        //     };
-
-        //     var map = new google.maps.Map(document.getElementById('map_canvas'),
-        //         mapOptions);
-
-        //     var marker = new google.maps.Marker({
-        //       map: map,
-        //       position: map.getCenter()
-        //     });
-        //     var image = 'http://public.kamia.com/mapPin.png';
-        //     var myLatLng = new google.maps.LatLng(-33.890542, 151.274856);
-        //     var ardicMarker = new google.maps.Marker({
-        //         position: myLatLng,
-        //         map: map,
-        //         icon: image
-        //     });
-            
-        //   }
-
-        function initialize() {
-          var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-          var myOptions = {
-            zoom: 2,
-            center: myLatlng,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          }
-          var map = new google.maps.Map(document.getElementById("map_taipei"), myOptions);
-
-          var image = 'http://public.kamia.com/mapPin.png';
-          var myLatLng = new google.maps.LatLng(-33.890542, 151.274856);
-          var beachMarker = new google.maps.Marker({
-              position: myLatLng,
-              map: map,
-              icon: image
-          });
-        }
+        
     </script>
 
 

@@ -27,7 +27,7 @@ jQuery(document).ready(function(){
 	function tabsAct(activeId, unactiveId1, unactiveId2){
 		
 		jQuery.each(tabControls,function(){
-			console.log(this);
+			//console.log(this);
 			jQuery(this).removeClass('active left right');
 		});
 		tabControls.eq(unactiveId1).addClass('left');
@@ -39,11 +39,19 @@ jQuery(document).ready(function(){
 		tabContents.eq(activeId).fadeIn(300);
 	}
 
+	jQuery('#tabContentWrap li .open').css('height','290px');
 	jQuery('#tabContentWrap .mapList').click(function(){
 		var clicked = jQuery(this);
-		// console.log(clicked); 
+		// close previous opened 
+		clicked.parent().find('.open').animate({
+			'height': 70
+		}, 500);
 		clicked.parent().find('.open').removeClass('open').addClass('close');
+		// open clicked one
 		clicked.removeClass('close').addClass('open');
+		clicked.animate({
+			'height': 290
+		}, 500);
 		
 	});
 });
