@@ -18,8 +18,11 @@ textarea {
     color: #222;
 }
 
-a{
-    outline: none;
+a:active {
+  outline: none;
+}
+:-moz-any-link:focus {
+  outline: none;
 }
 body {
     font-size: 1em;
