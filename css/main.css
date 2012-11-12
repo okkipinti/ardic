@@ -137,6 +137,7 @@ html, body {
     /* Hamm 先將它取消 */
     padding-bottom: 385px;
     overflow: auto;
+    margin-bottom: 60px;
 }
 body{
     font-family:"Arial";
@@ -264,17 +265,20 @@ nav li.nav-contacts:hover {
     margin-bottom: 60px;
 }
 #servicesIntro{
-    height:289px;
+    height:250px;
     background-color: #e4e4e4;
     border-bottom:solid 1px #c1c1c1;
     margin: 74px 0 0 0;
+}
+#servicesIntro ul{
+    margin-left:2px;
 }
 #servicesIntro ul li{
     list-style: none;
     float: left;
     width: 312px;
-    height: 290px;
-    margin-right: 19px;
+    height: 250px;
+    margin-right: 21px;
     background-repeat: no-repeat;
     background-position: center 37px;
     text-align: center;
@@ -359,6 +363,9 @@ nav li.nav-contacts:hover {
 #mainContent{
     /*margin-bottom:30px;*/
 }
+.home #mainContent{
+    margin-top: 30px;
+}
 #mainContent #mainLeft{
     width: 646px;
     padding-right: 20px;
@@ -388,7 +395,7 @@ nav li.nav-contacts:hover {
     color: #797979;
     margin:0 0 8px 0;
 }
-.newsList .newsSwitch{
+.newsList li.close .newsSwitch{
     position: absolute;
     width: 10px;
     height: 10px;
@@ -397,13 +404,12 @@ nav li.nav-contacts:hover {
     top:0;
     cursor: pointer;
 }
-.newsList .newsSwitch.open{
+.newsList li.open .newsSwitch{
     background:url(../img/homeNewsClose.png) no-repeat center;
 }
 .newsList li h5{
    font-size: 14px;
    margin:0 0 10px 0; 
-   cursor: pointer;
 }
 .newsList li .newsContent{
     position: relative;
@@ -498,7 +504,7 @@ footer{
     float: right;
     width:293px;
     border-left: solid 1px #3e3e3e;
-    padding-left:29px;
+    padding-left:19px;
 }
 #links ul li{
     list-style: none;
@@ -538,7 +544,6 @@ footer{
     padding: 9px 0 0 16px;
     background: url(../img/backTop.png) no-repeat center right;
     margin-top: 12px;
-    border-left: solid 1px #383838;
     color: #383838;
     font-size: 12px;
 }

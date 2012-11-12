@@ -13,39 +13,26 @@ jQuery(document).ready(function(){
         directionNav: false
     });
 
-    jQuery('.newsContent').eq(0).css('display','block');
-    jQuery('.newsSwitch').eq(0).removeClass('close').addClass('open');
-    var newsClick;
-	jQuery('.newsSwitch').click(function(){
-		
-		// var newsContent = jQuery(this).next('.newsContent');
-		// if(jQuery(this).hasClass('open')){
-		// 	newsContent.slideUp('fast');
-		// 	jQuery(this).removeClass('open');
-		// }else{
-		// 	newsContent.slideDown('fast');
-		// 	jQuery(this).addClass('open');
-		// }
-
-		newsClick = jQuery(this);
-		indexNewsTab(newsClick);
-		
-	});
-	jQuery('.newsList li h5').click(function(){
-		newsClick = jQuery(this).siblings('.newsSwitch');
-		indexNewsTab(newsClick);
-	});
-
-	function indexNewsTab(newsClick){
-		var newsContent = newsClick.next('.newsContent');
-		if(newsClick.hasClass('open')){
-			newsContent.slideUp('fast');
-			newsClick.removeClass('open');
-		}else{
-			newsContent.slideDown('fast');
-			newsClick.addClass('open');
+    jQuery('#mainLeft .newsContent').eq(0).css('display','block');
+    var hoverIndex = 0;
+	jQuery('#mainLeft .newsList li').hover(
+		function(){
+			
+			jQuery('.newsList li').eq(hoverIndex).removeClass('open').addClass('close');
+			jQuery('.newsList li').eq(hoverIndex).children('.newsContent').stop().slideUp('fast');
+			
+			if(jQuery(this).hasClass('close')){ //if self is close, open it
+				jQuery(this).removeClass('close').addClass('open');
+				jQuery(this).children('.newsContent').stop().slideDown('fast');
+			}
+			hoverIndex = jQuery(this).index();
+		},
+		function(){
+			console.log('leave');
 		}
-	}
+			
+	);
+
 
 });
 
