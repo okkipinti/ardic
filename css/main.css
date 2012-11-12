@@ -118,6 +118,17 @@ textarea {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'VectoraLH';
+    /*src: url('../fonts/univers-condensedlight-webfont.eot');*/
+    src: 
+         url('../fonts/Vectora_LH_75_Bold.woff') format('woff'),
+         url('../fonts/Vectora_LH_75_Bold.ttf') format('truetype'),
+         url('../fonts/vectora_lh_75_bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body { 
 	height: 100%;
 }
@@ -155,7 +166,7 @@ nav ul{
     height: 69px;
     margin:0;
     /*background-color: #fff;*/
-    margin-left: 85px;
+    margin-left: 100px;
     background-repeat: no-repeat;
     background-position: 0 center;
     margin-top: 6px;
@@ -168,26 +179,43 @@ nav ul li{
 }
 nav ul li a{
     display: block;
-    padding: 25px 50px 0 0;
+    padding: 25px 45px 0 0;
     /*width: 88px;*/
     height: 31px;
     font-size: 14px;
     color: #828282;
     font-family: "Univers-CondensedLight"
 }
+nav ul li.nav-subscribe a{
+    padding: 0px 5px 0px 25px;
+    margin-top:23px;
+    height: 20px;
+    border: solid 1px #aaa;
+    background: url(../img/mail.png) no-repeat 5px center;
+}
 nav ul li a:hover {
     color: #000;
+}
+nav ul li.nav-subscribe a:hover{
+    background: url(../img/mail-hover.png) no-repeat 5px center;
+    border: solid 1px #db4139;
+    color: #db4139;
 }
 nav h1{
     /*display: inline;*/
     width: 85px;
     height: 69px;
+    margin-top: 6px;
     position:absolute;
     line-height: 0;
     font-size:0;
     background-image:url(../img/logo.png);
     background-repeat: no-repeat;
     background-position: center center;
+}
+nav h1 a{
+    display: block;
+    height: 69px;
 }
 nav li.nav-product:hover {
     background: url(../img/current.png) 0 0 no-repeat;
@@ -234,6 +262,9 @@ nav li.nav-contacts:hover {
 }
 #slider-wrapper>div{
     background: #000;
+}
+.service .innerWrap, .contact .innerWrap{
+    margin-bottom: 60px;
 }
 #servicesIntro{
     height:289px;
@@ -375,6 +406,7 @@ nav li.nav-contacts:hover {
 .newsList li h5{
    font-size: 14px;
    margin:0 0 10px 0; 
+   cursor: pointer;
 }
 .newsList li .newsContent{
     position: relative;
@@ -492,13 +524,27 @@ footer{
     bottom:0; 
 }
 #footerBot .innerWrap{
-    background-image:url(../img/footLogo.png);
-    background-repeat: no-repeat;
-    background-position: 0 center;
+    
 }
 #footerBot p{
-    margin-left: 110px;
     padding:11px 0 5px 0;
+    float: left;
+}
+#footerBot #backToTop{
+    display:block;
+    float: right;
+    width: 57px;
+    height: 27px;
+    padding: 9px 0 0 16px;
+    background: url(../img/backTop.png) no-repeat center right;
+    margin-top: 12px;
+    border-left: solid 1px #383838;
+    color: #383838;
+    font-size: 12px;
+}
+#footerBot #backToTop:hover{
+    background: url(../img/backTop-hover.png) no-repeat center right;
+    color: #fff;
 }
 .headquote{
     text-align: center; 
