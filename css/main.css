@@ -866,17 +866,18 @@ footer{
 .distributors #tabContentWrap li .mapList{
     border-bottom: solid 1px #ccc;
     padding-top:30px;
-    transition: height 1s;
+    /*transition: height 1s;
     -moz-transition: height 1s;
     -webkit-transition: height 1s;
-    -o-transition: height 1s;
+    -o-transition: height 1s;*/
+    overflow:hidden;
 }
 .distributors #tabContentWrap li .mapList.close{
     cursor: pointer;
-    height: 70px; 
+    /*height: 70px;*/ 
 }
 .distributors #tabContentWrap li .mapList.open{
-    height: 290px;
+    /*height: 290px;*/
 }
 .distributors #tabContentWrap li h4{
     font-size: 16px;  
