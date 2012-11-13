@@ -26,10 +26,14 @@ var currentScrollX = 0;
 var lastScrollX = 0;
 
 var isAnimatingTo = false;
+<<<<<<< HEAD
 
 var tempX = 0;
 var MrTimer = 0;
 var Point = 0;
+=======
+var MrTimer = 0;
+>>>>>>> master
 
 jQuery(document).ready(function(){
 
@@ -48,8 +52,29 @@ jQuery(document).ready(function(){
     });
 
     jQuery(window).scroll(function() {
+<<<<<<< HEAD
 
         currentScrollX = jQuery(window).scrollTop();
+=======
+        
+        //  需要加入判斷當 scrollTop <= 0 就不需要去計算.
+        currentScrollX = jQuery(window).scrollTop();
+
+        if (currentScrollX <= 0) {
+            activeLayer = 0;
+            isAnimatingTo = false;
+            return;
+        }
+
+        if (currentScrollX == Goto[activeLayer]) {
+            return;
+        }
+
+        // console.log(currentScrollX);
+
+        //  判斷 scroll up | down
+        console.log(ScrollState());
+>>>>>>> master
 
         //  這是控制 submenu 中的 position
         if ($(window).scrollTop() > 75) {
@@ -58,6 +83,7 @@ jQuery(document).ready(function(){
             jQuery(".submenu").css({'position':'relative'});
         }
 
+<<<<<<< HEAD
         console.log(ScrollState());
 
         if (currentScrollX <= 0) {
@@ -84,6 +110,22 @@ jQuery(document).ready(function(){
             }
         }
 
+=======
+        if (isAnimatingTo == true) {
+            // console.log('return true');
+            return false;
+        }
+
+        if (ScrollState() == "UP") {
+            if (isAnimatingTo == false) {
+                activeLayer--;
+                if (activeLayer < 0) {
+                    activeLayer = 0;
+                }
+            }
+        }
+
+>>>>>>> master
         if (ScrollState() == "DOWN") {
             if (isAnimatingTo == false) {
                 activeLayer++;
@@ -119,9 +161,16 @@ jQuery(document).ready(function(){
                 );
 
                 window.clearInterval(MrTimer);
+<<<<<<< HEAD
         }, 500);
+=======
+        }, 1);
+>>>>>>> master
 
         lastScrollX = $(window).scrollTop();
+        console.log('activeLayer = ' + activeLayer);
+        // console.log('lastScrollX = ' + lastScrollX);
+        // console.log('temp = ' + tempX);
 
     });
 
