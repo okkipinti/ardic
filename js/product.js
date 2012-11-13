@@ -7,18 +7,18 @@ var curImgId = 1;
 var numberOfImages = 5; // Change this to the number of background images
 
 var Goto = new Array();
-Goto.push(1000);
-Goto.push(2000);
-Goto.push(3000);
-Goto.push(4000);
-Goto.push(5000);
-Goto.push(6000);
-Goto.push(7000);
-Goto.push(8000);
-Goto.push(9000);
-Goto.push(10000);
-Goto.push(15000);
-Goto.push(20000);
+// Goto.push(1000);
+// Goto.push(2000);
+// Goto.push(3000);
+// Goto.push(4000);
+// Goto.push(5000);
+// Goto.push(6000);
+// Goto.push(7000);
+// Goto.push(8000);
+// Goto.push(9000);
+// Goto.push(10000);
+// Goto.push(15000);
+// Goto.push(20000);
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -86,7 +86,7 @@ jQuery(document).ready(function(){
                     activeLayer = 0;
                 }
                 Snapping();
-                console.log("0. activeLayer = " + activeLayer);
+                // console.log("0. activeLayer = " + activeLayer);
             }
             return;
         }
@@ -99,7 +99,7 @@ jQuery(document).ready(function(){
                     activeLayer = Goto.length - 1;
                 }
                 Snapping();
-                console.log("2. activeLayer = " + activeLayer);
+                // console.log("2. activeLayer = " + activeLayer);
             }
             return;
         }
@@ -110,7 +110,7 @@ jQuery(document).ready(function(){
     jQuery(".submenu ul li").each(function(index, value){
         if (index != 0)
             jQuery(this).children().click(function(){
-                console.log(Goto[index - 1]);
+                // console.log(Goto[index - 1]);
                 jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
                 return false;
             });
@@ -128,11 +128,11 @@ jQuery(document).ready(function(){
                             isAnimatingTo = true;
                         }, 
                         duration : 3000, complete : function(){
-                            console.log('complete');
+                            // console.log('complete');
                             isAnimatingTo = false;
                             currentLayer = activeLayer;
                             MrTimer = 0;
-                            console.log('complete.activeLayer = ' + activeLayer);
+                            // console.log('complete.activeLayer = ' + activeLayer);
                             lastScrollX = jQuery(window).scrollTop();
                             // jQuery(window).bind('scroll');
                         }
@@ -224,7 +224,7 @@ jQuery(document).ready(function(){
     }
 
     window.setInterval(function(){
-        // console.log('window.scrollTop = ' + $(window).scrollTop());
+        console.log('window.scrollTop = ' + $(window).scrollTop());
     }, 1000);
 
     //
