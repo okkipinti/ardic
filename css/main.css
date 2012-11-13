@@ -18,6 +18,12 @@ textarea {
     color: #222;
 }
 
+a:active {
+  outline: none;
+}
+:-moz-any-link:focus {
+  outline: none;
+}
 body {
     font-size: 1em;
     line-height: 1.4;
@@ -137,6 +143,7 @@ html, body {
     /* Hamm 先將它取消 */
     padding-bottom: 385px;
     overflow: auto;
+    margin-bottom: 60px;
 }
 body{
     font-family:"Arial";
@@ -163,7 +170,7 @@ nav ul{
     height: 69px;
     margin:0;
     /*background-color: #fff;*/
-    margin-left: 85px;
+    margin-left: 100px;
     background-repeat: no-repeat;
     background-position: 0 center;
     margin-top: 6px;
@@ -176,20 +183,33 @@ nav ul li{
 }
 nav ul li a{
     display: block;
-    padding: 25px 50px 0 0;
+    padding: 25px 45px 0 0;
     /*width: 88px;*/
     height: 31px;
     font-size: 14px;
     color: #828282;
     font-family: "Univers-CondensedLight"
 }
+nav ul li.nav-subscribe a{
+    padding: 0px 5px 0px 25px;
+    margin-top:23px;
+    height: 20px;
+    border: solid 1px #aaa;
+    background: url(../img/mail.png) no-repeat 5px center;
+}
 nav ul li a:hover {
     color: #000;
+}
+nav ul li.nav-subscribe a:hover{
+    background: url(../img/mail-hover.png) no-repeat 5px center;
+    border: solid 1px #db4139;
+    color: #db4139;
 }
 nav h1{
     /*display: inline;*/
     width: 85px;
     height: 69px;
+    margin-top: 6px;
     position:absolute;
     line-height: 0;
     font-size:0;
@@ -251,17 +271,20 @@ nav li.nav-contacts:hover {
     margin-bottom: 60px;
 }
 #servicesIntro{
-    height:289px;
+    height:250px;
     background-color: #e4e4e4;
     border-bottom:solid 1px #c1c1c1;
     margin: 74px 0 0 0;
+}
+#servicesIntro ul{
+    margin-left:2px;
 }
 #servicesIntro ul li{
     list-style: none;
     float: left;
     width: 312px;
-    height: 290px;
-    margin-right: 19px;
+    height: 250px;
+    margin-right: 21px;
     background-repeat: no-repeat;
     background-position: center 37px;
     text-align: center;
@@ -346,6 +369,9 @@ nav li.nav-contacts:hover {
 #mainContent{
     /*margin-bottom:30px;*/
 }
+.home #mainContent{
+    margin-top: 30px;
+}
 #mainContent #mainLeft{
     width: 646px;
     padding-right: 20px;
@@ -375,7 +401,7 @@ nav li.nav-contacts:hover {
     color: #797979;
     margin:0 0 8px 0;
 }
-.newsList .newsSwitch{
+.newsList li.close .newsSwitch{
     position: absolute;
     width: 10px;
     height: 10px;
@@ -384,7 +410,7 @@ nav li.nav-contacts:hover {
     top:0;
     cursor: pointer;
 }
-.newsList .newsSwitch.open{
+.newsList li.open .newsSwitch{
     background:url(../img/homeNewsClose.png) no-repeat center;
 }
 .newsList li h5{
@@ -465,6 +491,9 @@ footer{
     font-weight: normal;
     color: #b9b9b9;
 }
+#sitemap div h4 a{
+    color: #b9b9b9;
+}
 #sitemap .subNav, #links ul{
     padding-left: 0;
 }
@@ -481,7 +510,7 @@ footer{
     float: right;
     width:293px;
     border-left: solid 1px #3e3e3e;
-    padding-left:29px;
+    padding-left:19px;
 }
 #links ul li{
     list-style: none;
@@ -507,13 +536,26 @@ footer{
     bottom:0; 
 }
 #footerBot .innerWrap{
-    background-image:url(../img/footLogo.png);
-    background-repeat: no-repeat;
-    background-position: 0 center;
+    
 }
 #footerBot p{
-    margin-left: 110px;
     padding:11px 0 5px 0;
+    float: left;
+}
+#footerBot #backToTop{
+    display:block;
+    float: right;
+    width: 57px;
+    height: 27px;
+    padding: 9px 0 0 16px;
+    background: url(../img/backTop.png) no-repeat center right;
+    margin-top: 12px;
+    color: #383838;
+    font-size: 12px;
+}
+#footerBot #backToTop:hover{
+    background: url(../img/backTop-hover.png) no-repeat center right;
+    color: #fff;
 }
 .headquote{
     text-align: center; 
@@ -830,17 +872,18 @@ footer{
 .distributors #tabContentWrap li .mapList{
     border-bottom: solid 1px #ccc;
     padding-top:30px;
-    transition: height 1s;
+    /*transition: height 1s;
     -moz-transition: height 1s;
     -webkit-transition: height 1s;
-    -o-transition: height 1s;
+    -o-transition: height 1s;*/
+    overflow:hidden;
 }
 .distributors #tabContentWrap li .mapList.close{
     cursor: pointer;
-    height: 70px; 
+    /*height: 70px;*/ 
 }
 .distributors #tabContentWrap li .mapList.open{
-    height: 290px;
+    /*height: 290px;*/
 }
 .distributors #tabContentWrap li h4{
     font-size: 16px;  

@@ -13,18 +13,25 @@ jQuery(document).ready(function(){
         directionNav: false
     });
 
-	jQuery('.newsSwitch').click(function(){
-		//console.log(jQuery(this).next('.newsContent'));
-		var newsContent = jQuery(this).next('.newsContent');
-		if(jQuery(this).hasClass('open')){
-			newsContent.slideUp('fast');
-			jQuery(this).removeClass('open');
-		}else{
-			newsContent.slideDown('fast');
-			jQuery(this).addClass('open');
+    jQuery('#mainLeft .newsContent').eq(0).css('display','block');
+    var hoverIndex = 0;
+	jQuery('#mainLeft .newsList li').hover(
+		function(){
+			
+			jQuery('.newsList li').eq(hoverIndex).removeClass('open').addClass('close');
+			jQuery('.newsList li').eq(hoverIndex).children('.newsContent').stop().slideUp('fast');
+			
+			if(jQuery(this).hasClass('close')){ //if self is close, open it
+				jQuery(this).removeClass('close').addClass('open');
+				jQuery(this).children('.newsContent').stop().slideDown('fast');
+			}
+			hoverIndex = jQuery(this).index();
+		},
+		function(){
+			console.log('leave');
 		}
-		
-	});
+			
+	);
 
 
 });
