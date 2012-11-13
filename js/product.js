@@ -19,6 +19,9 @@ var activeLayer = 0;
 var currentScrollX = 0;
 var lastScrollX = 0;
 
+var isAnimatingTo = false;
+var MrTimer = 0;
+
 jQuery(document).ready(function(){
 
     //  initial fancybox();
@@ -37,39 +40,86 @@ jQuery(document).ready(function(){
 
     jQuery(window).scroll(function() {
         
+        //  需要加入判斷當 scrollTop <= 0 就不需要去計算.
         currentScrollX = jQuery(window).scrollTop();
 
+        if (currentScrollX <= 0) {
+            activeLayer = 0;
+            isAnimatingTo = false;
+            return;
+        }
+
+        if (currentScrollX == Goto[activeLayer]) {
+            return;
+        }
+
+        // console.log(currentScrollX);
+
+        //  判斷 scroll up | down
         console.log(ScrollState());
 
-        console.log('currentScrollX = ' + currentScrollX + ' ' + ' lastScrollX = ' + lastScrollX);
-
+        //  這是控制 submenu 中的 position
         if ($(window).scrollTop() > 75) {
             jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
         } else {
             jQuery(".submenu").css({'position':'relative'});
         }
 
-        // jQuery("body").animate({ scrollTop: Goto[2] }, 1000);
-
-        console.log($(window).scrollTop());
-
-        if (between(0, 1000, jQuery(window).scrollTop())) {
-            jQuery("body").animate({ scrollTop: Goto[1] }, 1000);
+        if (isAnimatingTo == true) {
+            // console.log('return true');
+            return false;
         }
 
-        // if (between(1001, 5000, jQuery(window).scrollTop())) {
-        //     jQuery("body").animate({ scrollTop: Goto[2] }, 1000);
-        // }
+        if (ScrollState() == "UP") {
+            if (isAnimatingTo == false) {
+                activeLayer--;
+                if (activeLayer < 0) {
+                    activeLayer = 0;
+                }
+            }
+        }
 
-        // if (between(50001, 10000, jQuery(window).scrollTop())) {
-        //     jQuery("body").animate({ scrollTop: Goto[3] }, 1000);
-        // }
+        if (ScrollState() == "DOWN") {
+            if (isAnimatingTo == false) {
+                activeLayer++;
+                if (activeLayer > Goto.length - 1) {
+                    activeLayer = Goto.length - 1;
+                }
+            }
+        }
 
-        // if (between(10001, 20000, jQuery(window).scrollTop())) {
-        //     jQuery("body").animate({ scrollTop: Goto[4] }, 1000);
-        // }
+        console.log(Goto[activeLayer]);
+
+        if (MrTimer == 0)
+            MrTimer = window.setInterval(function(){
+                // console.log(activeLayer);
+                // console.log(ScrollState());
+                isAnimatingTo = true;
+
+                jQuery("body").animate({"scrollTop" : Goto[activeLayer]}, 
+                    {
+                        quenu : false, 
+                        step : function () {
+                            // console.log("activeLayer = " + activeLayer);
+                            isAnimatingTo = true;
+                        }, 
+                        duration : 3000, complete : function(){
+                            console.log('complete');
+                            isAnimatingTo = false;
+                            currentLayer = activeLayer;
+                            MrTimer = 0;
+                            // jQuery(window).bind('scroll');
+                        }
+                    }
+                );
+
+                window.clearInterval(MrTimer);
+        }, 1);
 
         lastScrollX = $(window).scrollTop();
+        console.log('activeLayer = ' + activeLayer);
+        // console.log('lastScrollX = ' + lastScrollX);
+        // console.log('temp = ' + tempX);
 
     });
 
