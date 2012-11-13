@@ -13,27 +13,14 @@ Goto.push(10000);
 Goto.push(15000);
 Goto.push(20000);
 Goto.push(25000);
-Goto.push(30000);
-Goto.push(35000);
-Goto.push(40000);
-Goto.push(45000);
-Goto.push(50000);
 
 var activeLayer = 0;
-var currentLayer = 0;
 
 var currentScrollX = 0;
 var lastScrollX = 0;
 
 var isAnimatingTo = false;
-<<<<<<< HEAD
-
-var tempX = 0;
 var MrTimer = 0;
-var Point = 0;
-=======
-var MrTimer = 0;
->>>>>>> master
 
 jQuery(document).ready(function(){
 
@@ -52,10 +39,6 @@ jQuery(document).ready(function(){
     });
 
     jQuery(window).scroll(function() {
-<<<<<<< HEAD
-
-        currentScrollX = jQuery(window).scrollTop();
-=======
         
         //  需要加入判斷當 scrollTop <= 0 就不需要去計算.
         currentScrollX = jQuery(window).scrollTop();
@@ -74,7 +57,6 @@ jQuery(document).ready(function(){
 
         //  判斷 scroll up | down
         console.log(ScrollState());
->>>>>>> master
 
         //  這是控制 submenu 中的 position
         if ($(window).scrollTop() > 75) {
@@ -83,19 +65,6 @@ jQuery(document).ready(function(){
             jQuery(".submenu").css({'position':'relative'});
         }
 
-<<<<<<< HEAD
-        console.log(ScrollState());
-
-        if (currentScrollX <= 0) {
-            activeLayer = 0;
-            isAnimatingTo = false;
-            return;
-        }
-
-        if (currentScrollX == Goto[activeLayer]) {
-            return;
-        }
-
         if (isAnimatingTo == true) {
             // console.log('return true');
             return false;
@@ -110,22 +79,6 @@ jQuery(document).ready(function(){
             }
         }
 
-=======
-        if (isAnimatingTo == true) {
-            // console.log('return true');
-            return false;
-        }
-
-        if (ScrollState() == "UP") {
-            if (isAnimatingTo == false) {
-                activeLayer--;
-                if (activeLayer < 0) {
-                    activeLayer = 0;
-                }
-            }
-        }
-
->>>>>>> master
         if (ScrollState() == "DOWN") {
             if (isAnimatingTo == false) {
                 activeLayer++;
@@ -161,11 +114,7 @@ jQuery(document).ready(function(){
                 );
 
                 window.clearInterval(MrTimer);
-<<<<<<< HEAD
-        }, 500);
-=======
         }, 1);
->>>>>>> master
 
         lastScrollX = $(window).scrollTop();
         console.log('activeLayer = ' + activeLayer);
@@ -251,6 +200,48 @@ jQuery(document).ready(function(){
                 _x = jQuery(this).offset().top - _h + "px";
 
                 jQuery(this).find('.scrollWindow').css({
+                    "top" : "-206px"
+                });
+            }
+
+        });
+
+        jQuery(".textWindow").each(function(index, value){
+            jQuery(this).children('div').css({
+                "top" : jQuery(this).parent().height() / 3 + "px"
+            });
+        });
+    }
+
+    window.setInterval(function(){
+        // console.log('window.scrollTop = ' + $(window).scrollTop());
+    }, 1000);
+
+    //
+    //ScrollDown Animation
+    //
+    window.setInterval(function() {
+        jQuery('.scrolldown_arrow').css('background','url(img/products/scrollDown_arrow_' + curImgId + '.png)');
+        curImgId = (curImgId +1) % numberOfImages;
+    }, 200);
+
+    function between (x, y, z) {
+        if ((z >= x) && (z <= y)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function ScrollState() {
+        return (currentScrollX >= lastScrollX) ? "DOWN" : "UP";
+    }
+
+});
+
+
+
+jQuery(this).find('.scrollWindow').css({
                     "top" : "-206px"
                 });
             }
