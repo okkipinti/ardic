@@ -237,23 +237,13 @@ jQuery(document).ready(function(){
         return (currentScrollX >= lastScrollX) ? "DOWN" : "UP";
     }
 
-});
-
-
-
-jQuery(this).find('.scrollWindow').css({
-                    "top" : "-206px"
-                });
-            }
-
-        });
-
+    jQuery(this).find('.scrollWindow').css({"top" : "-206px"});
         jQuery(".textWindow").each(function(index, value){
             jQuery(this).children('div').css({
                 "top" : jQuery(this).parent().height() / 3 + "px"
             });
         });
-    }
+    
 
     window.setInterval(function(){
         // console.log('window.scrollTop = ' + $(window).scrollTop());
