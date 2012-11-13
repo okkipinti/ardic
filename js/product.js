@@ -8,17 +8,21 @@ var numberOfImages = 5; // Change this to the number of background images
 
 var Goto = new Array();
 Goto.push(1000);
+Goto.push(2000);
+Goto.push(3000);
+Goto.push(4000);
 Goto.push(5000);
+Goto.push(6000);
+Goto.push(7000);
+Goto.push(8000);
+Goto.push(9000);
 Goto.push(10000);
 Goto.push(15000);
 Goto.push(20000);
-Goto.push(25000);
 
 var activeLayer = 0;
-
 var currentScrollX = 0;
 var lastScrollX = 0;
-
 var isAnimatingTo = false;
 var MrTimer = 0;
 
@@ -40,9 +44,16 @@ jQuery(document).ready(function(){
 
     jQuery(window).scroll(function() {
         
-        //  需要加入判斷當 scrollTop <= 0 就不需要去計算.
         currentScrollX = jQuery(window).scrollTop();
 
+        //  這是控制 submenu 中的 position
+        if ($(window).scrollTop() > 75) {
+            jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
+        } else {
+            jQuery(".submenu").css({'position':'relative'});
+        }
+
+        //  需要加入判斷當 scrollTop <= 0 就不需要去計算.
         if (currentScrollX <= 0) {
             activeLayer = 0;
             isAnimatingTo = false;
@@ -53,49 +64,62 @@ jQuery(document).ready(function(){
             return;
         }
 
-        // console.log(currentScrollX);
+        if (isAnimatingTo == true) {
+            return false;
+        }
 
-        //  判斷 scroll up | down
         console.log(ScrollState());
+        var status = ScrollState();
 
-        //  這是控制 submenu 中的 position
         if ($(window).scrollTop() > 75) {
             jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
         } else {
             jQuery(".submenu").css({'position':'relative'});
         }
 
-        if (isAnimatingTo == true) {
-            // console.log('return true');
-            return false;
-        }
+        lastScrollX = $(window).scrollTop();
 
-        if (ScrollState() == "UP") {
+        if (status == "UP") {
             if (isAnimatingTo == false) {
                 activeLayer--;
                 if (activeLayer < 0) {
                     activeLayer = 0;
                 }
+                Snapping();
+                console.log("0. activeLayer = " + activeLayer);
             }
+            return;
         }
 
-        if (ScrollState() == "DOWN") {
+        if (status == "DOWN") {
             if (isAnimatingTo == false) {
+                // console.log("1. activeLayer = " + activeLayer);
                 activeLayer++;
                 if (activeLayer > Goto.length - 1) {
                     activeLayer = Goto.length - 1;
                 }
+                Snapping();
+                console.log("2. activeLayer = " + activeLayer);
             }
+            return;
         }
 
-        console.log(Goto[activeLayer]);
+    });
 
+    //  submenu
+    jQuery(".submenu ul li").each(function(index, value){
+        if (index != 0)
+            jQuery(this).children().click(function(){
+                console.log(Goto[index - 1]);
+                jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
+                return false;
+            });
+    });
+
+    function Snapping () {
         if (MrTimer == 0)
             MrTimer = window.setInterval(function(){
-                // console.log(activeLayer);
-                // console.log(ScrollState());
                 isAnimatingTo = true;
-
                 jQuery("body").animate({"scrollTop" : Goto[activeLayer]}, 
                     {
                         quenu : false, 
@@ -108,29 +132,15 @@ jQuery(document).ready(function(){
                             isAnimatingTo = false;
                             currentLayer = activeLayer;
                             MrTimer = 0;
+                            console.log('complete.activeLayer = ' + activeLayer);
+                            lastScrollX = jQuery(window).scrollTop();
                             // jQuery(window).bind('scroll');
                         }
                     }
                 );
-
                 window.clearInterval(MrTimer);
         }, 1);
-
-        lastScrollX = $(window).scrollTop();
-        console.log('activeLayer = ' + activeLayer);
-        // console.log('lastScrollX = ' + lastScrollX);
-        // console.log('temp = ' + tempX);
-
-    });
-
-    jQuery(".submenu ul li").each(function(index, value){
-        if (index != 0)
-            jQuery(this).children().click(function(){
-                console.log(Goto[index - 1]);
-                jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
-                return false;
-            });
-    });
+    }
 
     function resize () {
 
@@ -234,42 +244,12 @@ jQuery(document).ready(function(){
     }
 
     function ScrollState() {
-        return (currentScrollX >= lastScrollX) ? "DOWN" : "UP";
-    }
-
-    jQuery(this).find('.scrollWindow').css({"top" : "-206px"});
-        jQuery(".textWindow").each(function(index, value){
-            jQuery(this).children('div').css({
-                "top" : jQuery(this).parent().height() / 3 + "px"
-            });
-        });
-    
-
-    window.setInterval(function(){
-        // console.log('window.scrollTop = ' + $(window).scrollTop());
-    }, 1000);
-
-    //
-    //ScrollDown Animation
-    //
-    window.setInterval(function() {
-        jQuery('.scrolldown_arrow').css('background','url(img/products/scrollDown_arrow_' + curImgId + '.png)');
-        curImgId = (curImgId +1) % numberOfImages;
-    }, 200);
-
-    function between (x, y, z) {
-        if ((z >= x) && (z <= y)) {
-            return true;
-        } else {
-            return false;
+        if (currentScrollX <= 0) {
+            return "UP";
         }
-    }
-
-    function ScrollState() {
-        return (currentScrollX >= lastScrollX) ? "DOWN" : "UP";
+        return (currentScrollX > lastScrollX) ? "DOWN" : "UP";
     }
 
 });
-
 
 
