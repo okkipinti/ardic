@@ -33,10 +33,10 @@ body.product {
 .submenu li {
     list-style: none;
     float: left;
-    margin:12px 15px;
+    margin:14px 15px;
     padding: 0;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     color:#fff;
 
 }
@@ -49,14 +49,16 @@ body.product {
 }
 .submenu li.deviceTitle{
     font-weight: bold;
-    font-size:22px;
+    font-size:20px;
     margin-top:8px
 }
 .submenu li.quote{
-    border-left:1px solid #ccc;
+    border-left:1px solid #636363;
+    border-right:1px solid #636363;
     float:right;
     color:#fff;
     padding-left:20px;
+    padding-right:20px
 }
 .submenu a:hover {
     color: red;
@@ -154,7 +156,7 @@ body.product {
     height: 731px;
     background: url(../img/products/m150/features/xyz/camera.png) center center;    
     position: absolute;
-    top: 50%;
+    top: -118px;
     left: -780px;
     opacity: 0;
     z-index: -1000;
@@ -602,7 +604,7 @@ body.product {
     border: solid 1px #000;
     width: 204px;
     height: 130px;
-    margin-right: 18px;
+    margin-right: 17px;
     margin-bottom: 20px;
 }
 .media-content .galleryBox ul#itemContainer-media li:nth-child(3n), .media-content .galleryBox ul#itemContainer-ap li:nth-child(3n){
@@ -666,7 +668,7 @@ body.product {
 }
 .media-content .galleryBox ul#itemContainer-ap li:hover{
     /*background: rgba(150,150,150,0.5);*/
-    border: solid 1px #888;
+    border: solid 1px #636363;
     box-shadow: 0 0 5px #000;
     /* webkit example */
     background-image: -webkit-gradient(
@@ -675,16 +677,16 @@ body.product {
     );
     /* mozilla example - FF3.6+ */
     background-image: -moz-linear-gradient(
-      right center,
+      top center,
       rgba(120, 120, 120, 0.5) 0%, rgba(0, 0, 0, 0.8) 99%
     );
     /* IE 5.5 - 7 */
     filter: progid:DXImageTransform.Microsoft.gradient(
-      gradientType=1, startColor=#787878, endColorStr=#000000
+      gradientType=1, startColor=rgba(120, 120, 120, 0.5), endColorStr=rgba(0, 0, 0, 0.8)
     );
     /* IE8 uses -ms-filter for whatever reason... */
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(
-      gradientType=1, startColor=#787878, endColoStr=#000000
+      gradientType=1, startColor=rgba(120, 120, 120, 0.5), endColoStr=rgba(0, 0, 0, 0.8)
     );
 }
 .media-content .galleryBox ul#itemContainer-ap li a{
