@@ -354,6 +354,7 @@ nav li a.current{
 }
 .home #mainContent{
     margin-top: 30px;
+    margin-bottom:60px;
 }
 #mainContent #mainLeft{
     width: 646px;
@@ -384,7 +385,7 @@ nav li a.current{
     color: #797979;
     margin:0 0 8px 0;
 }
-.newsList li.close .newsSwitch{
+.newsList li .newsSwitch{
     position: absolute;
     width: 10px;
     height: 10px;
@@ -399,6 +400,9 @@ nav li a.current{
 .newsList li h5{
    font-size: 14px;
    margin:0 0 10px 0; 
+}
+.newsList li h5 a{
+    color: #000;
 }
 .newsList li .newsContent{
     position: relative;
