@@ -9,8 +9,9 @@ body.product {
     background: url(../img/products/pattern.png) repeat fixed;
     /*overflow: hidden;*/
 }
-#main{
-    padding-bottom:0;
+.product #main{
+    margin-bottom:0;
+    padding-bottom: 0;
 }
 #main nav{
     position:relative;
@@ -153,10 +154,11 @@ body.product {
     height: 731px;
     background: url(../img/products/m150/features/xyz/camera.png) center center;    
     position: absolute;
-    top: -200px;
+    top: 50%;
     left: -780px;
     opacity: 0;
     z-index: -1000;
+    margin-top: -405px;
 }
 
 .media {
@@ -421,7 +423,7 @@ body.product {
 .ccd01 {
     /*width: 300px;*/
     /*height: 1000px;*/
-    background: url(../img/products/m150/features/xyz/autofocus.jpg) 0 0;
+    background: url(../img/products/m150/features/ccd/ccd1.jpg) center;
     position: absolute;
     top: 0px;
     left: 1304px;
@@ -442,7 +444,7 @@ body.product {
 .ccd02 {
     /*width: 300px;*/
     /*height: 1000px;*/
-    background: url(../img/products/m150/features/xyz/autofocus.jpg) 0 0;
+    background: url(../img/products/m150/features/ccd/ccd2.jpg) -66px;
     position: absolute;
     top: 0px;
     left: 1304px;
@@ -503,10 +505,10 @@ body.product {
 }
 
 .realtime-headline {
-    top: 200px;
+    top: 180px;
     left: 810px;
     position: absolute;
-    font-size: 45px;
+    font-size: 60px;
     width: 400px;
     font-family: 'BaskervilleURW-RegIta', serif;
 }
@@ -520,6 +522,17 @@ body.product {
     text-align: center;
     font-family: 'Univers-CondensedLight', sans-serif;
 }
+.product .fft.scrollWindow{
+    background: url(../img/products/fft.jpg) no-repeat 0 0;
+    width:570px;
+    top:0;
+    position:relative;
+}
+.fft-wrap.textWindow{
+    height: 100%;
+    background: #3a3a3a;
+    margin-left: 570px;
+}
 .applications {
     width:  1600px;
     height: 1400px;
@@ -529,13 +542,13 @@ body.product {
 .application-text{
    width: 460px; 
    float: right;
-   margin-top: 210px;
-   margin-right: 133px;
+   margin-top: 180px;
+   margin-right: 135px;
 }
 .application-text>p{
     color: #000;
     font-family: 'BaskervilleURW-RegIta', serif;
-    font-size: 30px;
+    font-size: 26px;
     text-align:center;
 }
 .components{
@@ -684,6 +697,9 @@ body.product {
     text-shadow: 0 -2px #000;
     background: url(../img/products/application-papers/pdfIcon.png) no-repeat 20px 16px;
 }
+.technical-specifications .content-wrap-580{
+    background: url(../img/products/technical/tech-m150.png) no-repeat 0 60px;
+}
 .technical-content h2{
     font-family: 'BaskervilleURW-RegIta', serif;
     font-size: 30px;
@@ -691,6 +707,7 @@ body.product {
     float: left;
     margin-left: 110px;
     font-weight: normal;
+    margin-top: 0px;
 }
 .technical-content div{
     float: right;
