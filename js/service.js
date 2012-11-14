@@ -3,8 +3,8 @@ jQuery(document).ready(function(){
 	var tabControls = jQuery('#servicesIntro ul li');
 
 	//tabContents.eq(0).css('width','980px');
-	tabControls.eq(0).addClass('active');
-	tabContents.eq(0).addClass('active');
+	tabControls.eq(1).addClass('active');
+	tabContents.eq(1).addClass('active');
 
 	jQuery('#servicesIntro li').click(function(){
 		clickTab = $(this).attr('id');

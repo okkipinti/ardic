@@ -277,7 +277,7 @@ nav li.nav-contacts:hover {
     list-style: none;
     float: left;
     width: 312px;
-    height: 250px;
+    height: 251px;
     margin-right: 21px;
     background-repeat: no-repeat;
     background-position: center 37px;
@@ -350,7 +350,7 @@ nav li.nav-contacts:hover {
     font-family: "Univers-CondensedLight";
     text-shadow: #fff 0 1px 0;
     color: #333;
-    padding-bottom: 37px;
+    padding-bottom: 39px;
     background: none;
     margin-bottom: 0;
 }
