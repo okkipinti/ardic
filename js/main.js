@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
         if (is_hover == true) {
             $("#overlayBG").show().animate({
                  "display" : ""
-                ,"opacity" : "0.5"
+                ,"opacity" : "0.7"
 				,"z-index" : "99999997"
             }, { quenu : false, step : function () {
                 jQuery(".product-arrar").attr('src', 'img/productArrowRed.png');

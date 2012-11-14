@@ -17,7 +17,9 @@ select,
 textarea {
     color: #222;
 }
-
+section{
+    overflow:hidden;
+}
 a:active {
   outline: none;
 }
@@ -143,7 +145,6 @@ html, body {
     /* Hamm 先將它取消 */
     padding-bottom: 385px;
     overflow: auto;
-    margin-bottom: 60px;
 }
 body{
     font-family:"Arial";
@@ -179,14 +180,16 @@ nav ul{
 nav ul li{
     float: left;
     list-style: none;
+    margin-right:45px;
     /*padding:30px 35px 0 0;*/
+}
+nav ul li.nav-subscribe{
+    margin-right:0;
 }
 nav ul li a{
     display: block;
-    padding: 25px 45px 0 0;
-    /*width: 88px;*/
-    height: 31px;
     font-size: 14px;
+    padding-top:25px;
     color: #828282;
     font-family: "Univers-CondensedLight"
 }
@@ -221,34 +224,14 @@ nav h1 a{
     display: block;
     height: 69px;
 }
-nav li.nav-product:hover {
-    background: url(../img/current.png) 0 0 no-repeat;
-    background-position: 24px 0px;
+
+nav li a:hover{
+    background: url(../img/current.png) center top no-repeat;
 }
-nav li.nav-service:hover {
-    background: url(../img/current.png) 0 0 no-repeat;
-    background-position: 20px 0px;
+nav li a.current{
+     background: url(../img/current.png) center top no-repeat;
 }
-nav li.nav-news:hover {
-    background: url(../img/current.png) 0 0 no-repeat;
-    background-position: 9px 0px;
-}
-nav li.nav-company:hover {
-    background: url(../img/current.png) 0 0 no-repeat;
-    background-position: 20px 0px;
-}
-nav li.nav-distributors:hover {
-    background: url(../img/current.png) 0 0 no-repeat;
-    background-position: 30px 0px;
-}
-nav li.nav-careers:hover {
-    background: url(../img/current.png) 0 0 no-repeat;
-    background-position: 18px 0px;
-}
-nav li.nav-contacts:hover {
-    background: url(../img/current.png) 0 0 no-repeat;
-    background-position: 20px 0px;
-}
+
 .product-arrar {
     position: relative;
     top: -1px;
