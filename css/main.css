@@ -17,7 +17,9 @@ select,
 textarea {
     color: #222;
 }
-
+section{
+    overflow:hidden;
+}
 a:active {
   outline: none;
 }
@@ -143,7 +145,6 @@ html, body {
     /* Hamm 先將它取消 */
     padding-bottom: 385px;
     overflow: auto;
-    margin-bottom: 60px;
 }
 body{
     font-family:"Arial";

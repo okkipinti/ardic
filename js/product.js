@@ -7,18 +7,22 @@ var curImgId = 1;
 var numberOfImages = 5; // Change this to the number of background images
 
 var Goto = new Array();
-// Goto.push(1000);
-// Goto.push(2000);
-// Goto.push(3000);
-// Goto.push(4000);
-// Goto.push(5000);
-// Goto.push(6000);
-// Goto.push(7000);
-// Goto.push(8000);
-// Goto.push(9000);
-// Goto.push(10000);
-// Goto.push(15000);
-// Goto.push(20000);
+Goto.push(0);
+Goto.push(4200);
+Goto.push(8700);
+Goto.push(10266);
+Goto.push(11766);
+Goto.push(15566);
+Goto.push(17500);
+Goto.push(24700);
+Goto.push(27100);
+Goto.push(28500);
+Goto.push(36233);
+Goto.push(43200);
+Goto.push(45800);
+Goto.push(48566);
+Goto.push(50000);
+Goto.push(52500);
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -68,7 +72,7 @@ jQuery(document).ready(function(){
             return false;
         }
 
-        console.log(ScrollState());
+        // console.log(ScrollState());
         var status = ScrollState();
 
         if ($(window).scrollTop() > 75) {
@@ -120,14 +124,15 @@ jQuery(document).ready(function(){
         if (MrTimer == 0)
             MrTimer = window.setInterval(function(){
                 isAnimatingTo = true;
-                jQuery("body").animate({"scrollTop" : Goto[activeLayer]}, 
+                jQuery("body, html").animate({"scrollTop" : Goto[activeLayer]}, 
                     {
                         quenu : false, 
                         step : function () {
                             // console.log("activeLayer = " + activeLayer);
                             isAnimatingTo = true;
                         }, 
-                        duration : 3000, complete : function(){
+                        //Speed Me
+                        duration : 900, complete : function(){
                             // console.log('complete');
                             isAnimatingTo = false;
                             currentLayer = activeLayer;
@@ -223,9 +228,9 @@ jQuery(document).ready(function(){
         });
     }
 
-    window.setInterval(function(){
-        console.log('window.scrollTop = ' + $(window).scrollTop());
-    }, 1000);
+    // window.setInterval(function(){
+    //     console.log('window.scrollTop = ' + $(window).scrollTop());
+    // }, 1000);
 
     //
     //ScrollDown Animation
