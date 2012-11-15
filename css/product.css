@@ -156,7 +156,7 @@ body.product {
     height: 731px;
     background: url(../img/products/m150/features/xyz/camera.png) center center;    
     position: absolute;
-    top: -118px;
+    top: 300px;
     left: -780px;
     opacity: 0;
     z-index: -1000;
