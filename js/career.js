@@ -36,7 +36,9 @@ jQuery(document).ready(function(){
 
 					jQuery("#careerSlide img").eq(ndx).animate({
 						opacity: 1
-					}, { queue: true, duration: 600 });
+					}, { queue: true, duration: 600 , complete: function(){
+						alert('0');
+					}});
 			    }
 			  });
 			
