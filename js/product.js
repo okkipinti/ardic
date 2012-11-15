@@ -23,6 +23,7 @@ Goto.push(45800);
 Goto.push(48566);
 Goto.push(50000);
 Goto.push(52500);
+Goto.push(62500);
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -89,7 +90,7 @@ jQuery(document).ready(function(){
                 if (activeLayer < 0) {
                     activeLayer = 0;
                 }
-                Snapping();
+                // Snapping();
                 console.log("0. activeLayer = " + activeLayer);
             }
             return;
@@ -102,7 +103,7 @@ jQuery(document).ready(function(){
                 if (activeLayer > Goto.length - 1) {
                     activeLayer = Goto.length - 1;
                 }
-                Snapping();
+                // Snapping();
                 console.log("2. activeLayer = " + activeLayer);
             }
             return;

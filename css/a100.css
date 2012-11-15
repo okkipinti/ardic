@@ -70,87 +70,84 @@ body.a100 {
     height: 1400px;
     background-color:#000;
 }
-.overview-bg {
+.content-wrap-innerbg{
     width:  1600px;
     height: 1400px;
-    background: url(../img/products/a100/a100-overview-bg.jpg) center center #000;
     position: absolute;
     top: -440px;
     left: -300px;
 }
-.features {
+#overview-bg {  
+    background: url(../img/products/a100/a100-overview-bg.jpg) center center #000;
+}
+.openLayout {
     width:  1600px;
     height: 1400px;
 }
 
-.features-bg {
-    width:  1600px;
-    height: 1400px;
-    /*background: url(../img/products/a100/a100.png) center center #000;*/
-    position: absolute;
-    top: -410px;
-    left: -300px;
+#openLayout-bg {  
+    background: url(../img/products/a100/open-bg.jpg) center center #000;
 }
 
-.features h2 {
+.openLayout h2 {
     color: white;
-    margin: 0 auto;
-    text-align:center;
-    width:500px;
+    margin: 0;
+    text-align: center;
+    width: 600px;
     font-family:'BaskervilleURW-RegIta';
     font-weight: normal;
-    font-size: 25px;
+    position: absolute;
+    font-size: 35px;
+    left: 200px;
+}
+#openLayout-slide>div{
+    width: 467px;
+    height: 526px;
+    position: absolute;
+    left: 267px;
+    top: 40px;
+    background-position: center;
+    display:none;
+}
 
-}
-.features h2.lasorTab{
-    position:absolute;
-    left:260px;
-}
-.xyz {
+.interchange {
     width:  1600px;
     height: 1400px;
     min-height: 1400px;
-    background-color: black;
+    /*background-color: black;*/
+}
+#interchange-bg{
+    background: url(../img/products/a100/interchange-bg.jpg) center center #000;
 }
 
-.m150-xyz {
-    width:  640px;
-    height: 660px;
-    background: url(../img/products/m150/features/xyz/xyzM150.png) center center;
+.interchange-a100{
+    width: 815px;
+    height: 768px;
+    background: url(../img/products/a100/interchange-a100.png) center;
     position: absolute;
-    top: -100px;
-    left: 180px;
+    top: 0px;
+    left: 170px;
 }
-
-.xyz-content {
+h2.interchange-title{
+    position: absolute;
+    top: 450px;
+    font-family:'BaskervilleURW-RegIta', serif;
+    font-weight: normal;
     color: white;
-    position: absolute;
-    top: 440px;
-    left: 0px;
-    width: 100%;
-    height: 100px;
-    /*border: dotted 1px red;*/
-    text-align: center;
-    opacity: 0;
+    margin: 0;
+    width: 380px;
+    font-size: 35px;
+    left: 350px;
 }
-
-.xyz-content p {
+.interchange-text{
+    position: absolute;
+    top: 550px;
+    left: 350px;
     color: white;
-    font-size: 26px;
-    margin: 0 0;
-    padding: 0 0;
-    font-family: 'BaskervilleURW-RegIta';
+    width: 380px;
+    font-family: 'Univers-CondensedLight', sans-serif;
+    font-size: 18px;
 }
-
-.xzy-arraw {
-    width:  894px;
-    height: 299px;
-    background: url(../img/products/m150/features/xyz/arrows.png) center center;
-    position: absolute;
-    top: 140px;
-    left: 54px;   
-}
-
 .camera {
     width: 732px;
     height: 731px;
@@ -247,7 +244,7 @@ body.a100 {
     text-align: center;
     color: white;
     width: 850px;
-    left: 0;
+    left: 20px;
     /*border: 1px solid red;*/
 }
 
@@ -303,26 +300,6 @@ body.a100 {
     box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.5);*/
     
 }
-
-.laser02 {
-    /*width: 300px;*/
-    /*height: 1000px;*/
-    background: url(../img/products/m150/features/m150_features_laser2.jpg) 0 0;
-    position: absolute;
-    top: -1px;
-    left: 1904px;
-    /*-webkit-box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.5);*/
-    
-}
-
-.laser-wrap {
-    background-color:#3a3a3a;
-    height: 100%;
-    /*width: 100%;*/
-    
-}
-
 .contentWindow {
     width: 185px;
     height: 300px;

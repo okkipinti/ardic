@@ -108,7 +108,7 @@ jQuery(document).ready(function(){
         //     return;
         // }
 
-    });
+    }); //end scroll
 
     //submenu
     jQuery(".submenu ul li").each(function(index, value){
@@ -226,11 +226,11 @@ jQuery(document).ready(function(){
                 "top" : jQuery(this).parent().height() / 3 + "px"
             });
         });
-    }
+    } //end resize()
 
-    // window.setInterval(function(){
-    //     console.log('window.scrollTop = ' + $(window).scrollTop());
-    // }, 1000);
+    window.setInterval(function(){
+        console.log('window.scrollTop = ' + $(window).scrollTop());
+    }, 1000);
 
     //
     //ScrollDown Animation
@@ -240,6 +240,19 @@ jQuery(document).ready(function(){
         curImgId = (curImgId +1) % numberOfImages;
     }, 200);
 
+    //openLayout animation
+    
+    jQuery('#openLayout-slide > div:first').show();
+    setInterval(function(){    
+        jQuery('#openLayout-slide > div:first').fadeIn('1000',function(){          
+            //console.log(this); //move1
+            //console.log(jQuery('#openLayout-slide div:eq(1)'));//probably move2
+            jQuery('#openLayout-slide div:eq(1)').fadeIn('1000');
+            jQuery(this).fadeOut(1000);
+            jQuery(this).appendTo('#openLayout-slide');
+        });
+    }, 2000);
+    
     function between (x, y, z) {
         if ((z >= x) && (z <= y)) {
             return true;
@@ -254,6 +267,8 @@ jQuery(document).ready(function(){
         }
         return (currentScrollX > lastScrollX) ? "DOWN" : "UP";
     }
+
+
 
 });
 

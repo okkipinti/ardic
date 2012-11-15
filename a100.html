@@ -115,9 +115,12 @@
 
     <div class="product-wrap">
         <section class="overview"
+                 data-0    = "position: fixed; top:0;background-position: 0px 0px;"
+                 data-1500 = "top:0%"
+                 data-3500 = "top:-100%"
         >
             <div class="content-wrap">
-                <div class="overview-bg"></div>
+                <div class="content-wrap-innerbg" id="overview-bg"></div>
                 <div class="a100">A100</div>
                 <div class="a100-title">
                     <h1>A100</h1>
@@ -129,57 +132,67 @@
                         <p class="scrolldown_arrow">Scroll Down</p>
                     </div>
                 </div>
-                <div id="red-dot">
-                </div>
-                <div class="m150-headline">
-                    <h4>The M150 is a MEMS Analyzer used for characterizing microstructural mechanical properties.<br></h4>
-                    <h5>Using a simple point-and-shoot laser optical system, the user can quickly obtain resonant peaks of a microstructure through wide bandwidth frequency scanning and real-time Fourier transform (FFT).</h5>
-                </div>
+                <div id="red-dot"></div>
                 
+                <div class="a100-headline">
+                    <h4>The A-100 is a pioneering system that simulates the concepts of atomic force microscopy (AFM).<br></h4>
+                    <h5>Ideal as the first step into the world of nanotechnology, the A-100 allows students to easily learn, observe, and experiment.</h5>
                 </div>
                 
             </div><!-- /content-wrap -->
         </section><!-- /overview -->
 
 
-        <section class="features"
-            data-4500 = "position: fixed; top:100%;opacity:0"
-            data-8500 = "position: fixed; top:0;opacity:1"
-            data-8500 = "position: fixed; top:0;"
-            data-10000 = "background-position: 0px -1400px;opacity:1"
-            data-13500 = "top:0%"
-            data-13600 = "top:-100%"
-        >
+        <section class="openLayout"
+                 data-1500 = "position: fixed; top:100%;opacity:0;"
+                 data-5500 = "position: fixed; top:0;opacity:1;"                 
+                 data-7000 = "background-position: 0px -1400px;opacity:1;"
+                 data-10500 = "top:0%;"
+                 data-10600 = "top:-100%;">
             <div class="content-wrap-580"
             >
-                <div class="features-bg"></div>
-                <h2 class="lasorTab"
-                    data-7500="opacity:0;top:0px;"
-                    data-8300="opacity:1;top:40px;" 
+                <div class="content-wrap-innerbg" id="openLayout-bg"></div>
+                <h2 class="openLayoutTitle"
+                    data-1800="opacity:0;top:-200px;"
+                    data-2800="opacity:1;top:0px;" 
                 >
-                    Non-contact and zero mass-loading, resulting in no<br>
-                    change in stiffness to the sample during measurement
+                    Open layout for clear observation by students
                 </h2>
-
-            
+                <div id="openLayout-slide">
+                    <div>
+                        <img src="img/products/a100/op-move1.png">
+                    </div>
+                    <div>
+                        <img src="img/products/a100/op-move2.png">
+                    </div>
+                    <div>
+                        <img src="img/products/a100/op-move3.png">
+                    </div>
+                    <div>
+                        <img src="img/products/a100/op-move4.png">
+                    </div>
+                </div>           
 
             </div><!-- /content-wrap-580 -->
 
-        </section><!-- /features -->
+        </section><!-- /openLayout -->
 
-        <section class="xyz"
-            data-12600 = "position: fixed; top:100%;opacity:0;"
-            data-13100 = "position: fixed; top:0;opacity:1"
-            data-14100 = "position: fixed; top:0;"
-            data-14800 = "background-position: 0px -1400px;opacity:1"
-            data-20000 = "top:0%;opacity:1"
-            data-23000 = "top:-100%:opacity:0"
+        <section class="interchange"
+            data-10100 = "position: fixed; top:100%;opacity:0;"
+            data-10600 = "position: fixed; top:0;opacity:1;"
+            data-11000 = "position: fixed; top:0;"
+            data-11500 = "background-position: 0px -1400px;opacity:1;"
+            data-13500 = "top:0%;opacity:1;"
+            data-16500 = "top:-100%:opacity:0;"
         >
             <div class="content-wrap-580">
-                
-                
+                <div class="content-wrap-innerbg" id="interchange-bg">
+                    <h2 class="interchange-title">Interchangeable probes for varying tip profiles</h2>
+                    <p class="interchange-text">The A-100 is a pioneering system that simulates the concepts of atomic force microscopy (AFM). Ideal as the first step into the world of nanotechnology, the A-100 allows students to easily learn, observe, and experiment.</p>
+                </div>
+                <div class="interchange-a100"></div>
             </div>
-        </section><!-- /features xyz -->
+        </section><!-- /features interchange -->
 
         <section class="CCD"
             data-20000 = "position: fixed; top:100%;opacity:0"
