@@ -148,17 +148,6 @@ h2.interchange-title{
     font-family: 'Univers-CondensedLight', sans-serif;
     font-size: 18px;
 }
-.camera {
-    width: 732px;
-    height: 731px;
-    background: url(../img/products/m150/features/xyz/camera.png) center center;    
-    position: absolute;
-    top: -118px;
-    left: -780px;
-    opacity: 0;
-    z-index: -1000;
-    margin-top: -405px;
-}
 
 .media {
     width:  1600px;
@@ -289,17 +278,7 @@ h2.interchange-title{
     width: 225px;
     margin-left: 390px; 
 }
-.laser01 {
-    /*width: 300px;*/
-    /*height: 1000px;*/
-    background: url(../img/products/m150/features/m150_features_laser1.jpg) 0 0;
-    position: absolute;
-    top: -1px;
-    left: 1304px;
-    /*-webkit-box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0px 0px 10px 10px rgba(0, 0, 0, 0.5);*/
-    
-}
+
 .contentWindow {
     width: 185px;
     height: 300px;
@@ -328,107 +307,42 @@ h2.interchange-title{
     font-family: 'Univers-CondensedLight';
 }
 
-.autofocus {
-    /*width: 300px;*/
-    /*height: 1000px;*/
-    background: url(../img/products/m150/features/xyz/autofocus.jpg) 0 0;
-    position: absolute;
-    top: -1px;
-    left: 1304px;
-}
-.autofocus img {
-    position: absolute;
-    top: 480px;
-    left: 150px;
-
-}
-.autofocus-wrap {
-    background-color:#3A3A3A;
-    height: 100%;
-    /*width: 100%;*/
-    /*margin-left: 300px;*/
-}
-.autofocus-text {
-
-}
-
-.CCD {
+.system {
     width: 1600px;
     height: 1400px;
     /*background: url(../img/products/m150/features/ccd/2CCDs_bg.jpg) 0 0 no-repeat;*/
 }
-
-.ccd-bg {
-    width: 1600px;
-    height: 1400px;
-    background: url(../img/products/m150/features/ccd/2CCDs_bg.jpg) center center;
-    position: absolute;
-    top: -440px;
-    left: -300px;
+#system-bg {
+    background: url(../img/products/a100/system-bg.jpg) center center;
 }
-
-.CCD-headline {
+.system-title {
+    font-family:'BaskervilleURW-RegIta', serif;
+    font-weight: normal;
+    color: white;
+    margin: 0;
+    width: 380px;
+    font-size: 34px;
     position: absolute;
-    font-family: 'BaskervilleURW-RegIta';
-    width: 100%;
-    height: 50px;
-    top: 0px;
-    color: white;    
+    right: 200px;
+    top: 500px;
+}
+#system-bg ol{
+    width: 380px;
+    position: absolute;
+    top: 600px;
+    right: 200px;
+}
+#system-bg ol li {
+    font-family: 'Univers-CondensedLight', sans-serif;
     font-size: 28px;
-    text-align: center;
-    margin: 0 0;
-    padding: 0 0;
+    color: #fff;
+    list-style-position: inside;
 }
-.CCD-light {
-    width: 222px;
-    height: 105px;
-    background: url(../img/products/m150/features/ccd/light.png) 0 0 no-repeat;
+.system-a100{
+    width: 557px;
+    height: 645px;
+    background: url(../img/products/a100/system-a100.png) no-repeat center center;
     position: absolute;
-    top: 186px;
-    left: 482px;
-    opacity: 0;
-}
-
-.ccd01 {
-    /*width: 300px;*/
-    /*height: 1000px;*/
-    background: url(../img/products/m150/features/ccd/ccd1.jpg) center;
-    position: absolute;
-    top: 0px;
-    left: 1304px;
-}
-.ccd01 img {
-    position: absolute;
-    top: 480px;
-    left: 150px;
-
-}
-.ccd01-wrap {
-    background-color:#3a3a3a;
-    height: 100%;
-    /*width: 100%;*/
-    /*margin-left: 300px;*/
-}
-
-.ccd02 {
-    /*width: 300px;*/
-    /*height: 1000px;*/
-    background: url(../img/products/m150/features/ccd/ccd2.jpg) -66px;
-    position: absolute;
-    top: 0px;
-    left: 1304px;
-}
-.ccd02 img {
-    position: absolute;
-    top: 480px;
-    left: 150px;
-
-}
-.ccd02-wrap {
-    background-color: #3a3a3a;
-    height: 100%;
-    /*width: 100%;*/
-    /*margin-left: 300px;*/
 }
 
 .laptop {
