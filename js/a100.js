@@ -6,24 +6,23 @@ var PRODUCT_WAPPER_MARGIN_TOP     = 0
 var curImgId = 1;
 var numberOfImages = 5; // Change this to the number of background images
 
-var Goto = new Array();
-Goto.push(0);
-Goto.push(4200);
-Goto.push(8700);
-Goto.push(10266);
-Goto.push(11766);
-Goto.push(15566);
-Goto.push(17500);
-Goto.push(24700);
-Goto.push(27100);
-Goto.push(28500);
-Goto.push(36233);
-Goto.push(43200);
-Goto.push(45800);
-Goto.push(48566);
-Goto.push(50000);
-Goto.push(52500);
-Goto.push(62500);
+// var Goto = new Array();
+// Goto.push(0);
+// Goto.push(4200);
+// Goto.push(8700);
+// Goto.push(10266);
+// Goto.push(11766);
+// Goto.push(15566);
+// Goto.push(17500);
+// Goto.push(24700);
+// Goto.push(27100);
+// Goto.push(28500);
+// Goto.push(36233);
+// Goto.push(43200);
+// Goto.push(45800);
+// Goto.push(48566);
+// Goto.push(50000);
+// Goto.push(52500);
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -59,57 +58,59 @@ jQuery(document).ready(function(){
         }
 
         //  需要加入判斷當 scrollTop <= 0 就不需要去計算.
-        if (currentScrollX <= 0) {
-            activeLayer = 0;
-            isAnimatingTo = false;
-            return;
-        }
+        // if (currentScrollX <= 0) {
+        //     activeLayer = 0;
+        //     isAnimatingTo = false;
+        //     return;
+        // }
 
-        if (currentScrollX == Goto[activeLayer]) {
-            return;
-        }
+        // if (currentScrollX == Goto[activeLayer]) {
+        //     return;
+        // }
 
-        if (isAnimatingTo == true) {
-            return false;
-        }
+        // if (isAnimatingTo == true) {
+        //     return false;
+        // }
 
         // console.log(ScrollState());
         var status = ScrollState();
 
-        if ($(window).scrollTop() > 75) {
-            jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
-        } else {
-            jQuery(".submenu").css({'position':'relative'});
-        }
+        // if ($(window).scrollTop() > 75) {
+        //     jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
+        // } else {
+        //     jQuery(".submenu").css({'position':'relative'});
+        // }
 
         lastScrollX = $(window).scrollTop();
 
-        if (status == "UP") {
-            if (isAnimatingTo == false) {
-                activeLayer--;
-                if (activeLayer < 0) {
-                    activeLayer = 0;
-                }
-                // Snapping();
-            }
-            return;
-        }
+        // if (status == "UP") {
+        //     if (isAnimatingTo == false) {
+        //         activeLayer--;
+        //         if (activeLayer < 0) {
+        //             activeLayer = 0;
+        //         }
+        //         Snapping();
+        //         console.log("0. activeLayer = " + activeLayer);
+        //     }
+        //     return;
+        // }
 
-        if (status == "DOWN") {
-            if (isAnimatingTo == false) {
-                // console.log("1. activeLayer = " + activeLayer);
-                activeLayer++;
-                if (activeLayer > Goto.length - 1) {
-                    activeLayer = Goto.length - 1;
-                }
-                // Snapping();
-            }
-            return;
-        }
+        // if (status == "DOWN") {
+        //     if (isAnimatingTo == false) {
+        //         // console.log("1. activeLayer = " + activeLayer);
+        //         activeLayer++;
+        //         if (activeLayer > Goto.length - 1) {
+        //             activeLayer = Goto.length - 1;
+        //         }
+        //         Snapping();
+        //         console.log("2. activeLayer = " + activeLayer);
+        //     }
+        //     return;
+        // }
 
-    });
+    }); //end scroll
 
-    //  submenu
+    //submenu
     jQuery(".submenu ul li").each(function(index, value){
         if (index != 0)
             jQuery(this).children().click(function(){
@@ -119,32 +120,32 @@ jQuery(document).ready(function(){
             });
     });
 
-    function Snapping () {
-        if (MrTimer == 0)
-            MrTimer = window.setInterval(function(){
-                isAnimatingTo = true;
-                jQuery("body, html").animate({"scrollTop" : Goto[activeLayer]}, 
-                    {
-                        quenu : false, 
-                        step : function () {
-                            //  console.log("activeLayer = " + activeLayer);
-                            isAnimatingTo = true;
-                        }, 
-                        //Speed Me
-                        duration : 900, complete : function(){
-                            // console.log('complete');
-                            isAnimatingTo = false;
-                            currentLayer = activeLayer;
-                            MrTimer = 0;
-                            //  console.log('complete.activeLayer = ' + activeLayer);
-                            lastScrollX = jQuery(window).scrollTop();
-                            // jQuery(window).bind('scroll');
-                        }
-                    }
-                );
-                window.clearInterval(MrTimer);
-        }, 1);
-    }
+    // function Snapping () {
+    //     if (MrTimer == 0)
+    //         MrTimer = window.setInterval(function(){
+    //             isAnimatingTo = true;
+    //             jQuery("body, html").animate({"scrollTop" : Goto[activeLayer]}, 
+    //                 {
+    //                     quenu : false, 
+    //                     step : function () {
+    //                         console.log("activeLayer = " + activeLayer);
+    //                         isAnimatingTo = true;
+    //                     }, 
+    //                     //Speed Me
+    //                     duration : 900, complete : function(){
+    //                         // console.log('complete');
+    //                         isAnimatingTo = false;
+    //                         currentLayer = activeLayer;
+    //                         MrTimer = 0;
+    //                         console.log('complete.activeLayer = ' + activeLayer);
+    //                         lastScrollX = jQuery(window).scrollTop();
+    //                         // jQuery(window).bind('scroll');
+    //                     }
+    //                 }
+    //             );
+    //             window.clearInterval(MrTimer);
+    //     }, 1);
+    // }
 
     function resize () {
 
@@ -225,11 +226,11 @@ jQuery(document).ready(function(){
                 "top" : jQuery(this).parent().height() / 3 + "px"
             });
         });
-    }
+    } //end resize()
 
-    // window.setInterval(function(){
-    //     console.log('window.scrollTop = ' + $(window).scrollTop());
-    // }, 1000);
+    window.setInterval(function(){
+        console.log('window.scrollTop = ' + $(window).scrollTop());
+    }, 1000);
 
     //
     //ScrollDown Animation
@@ -239,6 +240,19 @@ jQuery(document).ready(function(){
         curImgId = (curImgId +1) % numberOfImages;
     }, 200);
 
+    //openLayout animation
+    
+    jQuery('#openLayout-slide > div:first').show();
+    setInterval(function(){    
+        jQuery('#openLayout-slide > div:first').fadeIn('1000',function(){          
+            //console.log(this); //move1
+            //console.log(jQuery('#openLayout-slide div:eq(1)'));//probably move2
+            jQuery('#openLayout-slide div:eq(1)').fadeIn('1000');
+            jQuery(this).fadeOut(1000);
+            jQuery(this).appendTo('#openLayout-slide');
+        });
+    }, 2000);
+    
     function between (x, y, z) {
         if ((z >= x) && (z <= y)) {
             return true;
@@ -253,6 +267,8 @@ jQuery(document).ready(function(){
         }
         return (currentScrollX > lastScrollX) ? "DOWN" : "UP";
     }
+
+
 
 });
 
