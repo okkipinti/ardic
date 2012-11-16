@@ -100,7 +100,7 @@ body.a100 {
     font-size: 35px;
     left: 200px;
 }
-#openLayout-slide>div{
+#openLayout-slide>div {
     width: 467px;
     height: 526px;
     position: absolute;
@@ -120,33 +120,35 @@ body.a100 {
     background: url(../img/products/a100/interchange-bg.jpg) center center #000;
 }
 
-.interchange-a100{
-    width: 815px;
-    height: 768px;
-    background: url(../img/products/a100/interchange-a100.png) center;
-    position: absolute;
-    top: 0px;
-    left: 170px;
-}
 h2.interchange-title{
     position: absolute;
-    top: 450px;
+    top: 425px;
     font-family:'BaskervilleURW-RegIta', serif;
     font-weight: normal;
     color: white;
     margin: 0;
-    width: 380px;
-    font-size: 35px;
+    width: 365px;
+    font-size: 30px;
+    line-height: 40px;
     left: 350px;
 }
 .interchange-text{
     position: absolute;
-    top: 550px;
+    top: 505px;
     left: 350px;
     color: white;
-    width: 380px;
+    width: 365px;
     font-family: 'Univers-CondensedLight', sans-serif;
     font-size: 18px;
+}
+#interchange-slide>div {
+    width: 1168px;
+    height: 764px;
+    position: absolute;
+    left: -34px;
+    top: -92px;
+    background-position: center;
+    display:none;
 }
 
 .media {
@@ -181,18 +183,18 @@ h2.interchange-title{
     height: 580px;  
 }
 
-.a100 {
+.overview-a100 {
     width: 326px;
     height: 455px;
     background: url(../img/products/a100/a100.png) 0 0 no-repeat;
     position: absolute;
     top: 10px;
-    left: 20px;    
-    /*text-indent: -9999px;*/
+    left: 80px;    
+    text-indent: -9999px;
 }
 .a100-title {
     top: 45px;
-    left: 550px;
+    left: 520px;
     position: absolute;
     text-align: center;
 }
@@ -254,7 +256,7 @@ h2.interchange-title{
    background: url(../img/products/a100/redDot.png) no-repeat center; 
    position: absolute;
    top: 0;
-   right: 85px;
+   right: 145px;
 }
 .mesurement {
     width: 300px;
@@ -335,7 +337,7 @@ h2.interchange-title{
 #system-bg ol li {
     font-family: 'Univers-CondensedLight', sans-serif;
     font-size: 28px;
-    color: #fff;
+    /*color: #fff;*/
     list-style-position: inside;
 }
 .system-a100{
@@ -344,7 +346,12 @@ h2.interchange-title{
     background: url(../img/products/a100/system-a100.png) no-repeat center center;
     position: absolute;
 }
-
+.system-mark{
+    width: 557px;
+    height: 645px;
+    position: absolute;
+    /*background: url(../img/products/a100/a.png) no-repeat center center;*/
+}
 .laptop {
     width: 746px;
     height: 549px;
@@ -550,24 +557,24 @@ h2.interchange-title{
 .media-content .galleryBox ul#itemContainer-ap li:hover{
     /*background: rgba(150,150,150,0.5);*/
     border: solid 1px #636363;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 3px #000;
     /* webkit example */
     background-image: -webkit-gradient(
-      linear, left top, left bottom, from(rgba(120, 120, 120, 0.5)),
-      to(rgba(0, 0, 0, 0.8))
+      linear, left top, left bottom, from(rgba(120, 120, 120, 1)),
+      to(rgba(0, 0, 0, 1))
     );
     /* mozilla example - FF3.6+ */
     background-image: -moz-linear-gradient(
       top center,
-      rgba(120, 120, 120, 0.5) 0%, rgba(0, 0, 0, 0.8) 99%
+      rgba(120, 120, 120, 1) 0%, rgba(0, 0, 0, 1) 99%
     );
     /* IE 5.5 - 7 */
     filter: progid:DXImageTransform.Microsoft.gradient(
-      gradientType=1, startColor=rgba(120, 120, 120, 0.5), endColorStr=rgba(0, 0, 0, 0.8)
+      gradientType=1, startColor=rgba(120, 120, 120, 1), endColorStr=rgba(0, 0, 0, 1)
     );
     /* IE8 uses -ms-filter for whatever reason... */
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(
-      gradientType=1, startColor=rgba(120, 120, 120, 0.5), endColoStr=rgba(0, 0, 0, 0.8)
+      gradientType=1, startColor=rgba(120, 120, 120, 1), endColoStr=rgba(0, 0, 0, 1)
     );
 }
 .media-content .galleryBox ul#itemContainer-ap li a{

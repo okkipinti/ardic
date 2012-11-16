@@ -240,8 +240,7 @@ jQuery(document).ready(function(){
         curImgId = (curImgId +1) % numberOfImages;
     }, 200);
 
-    //openLayout animation
-    
+    //openLayout animation 
     jQuery('#openLayout-slide > div:first').show();
     setInterval(function(){    
         jQuery('#openLayout-slide > div:first').fadeIn('1000',function(){          
@@ -252,7 +251,17 @@ jQuery(document).ready(function(){
             jQuery(this).appendTo('#openLayout-slide');
         });
     }, 2000);
-    
+
+    //interchange animation
+    jQuery('#interchange-slide > div:first').show();
+    setInterval(function(){       
+        jQuery('#interchange-slide > div:first').fadeIn('1000',function(){         
+            jQuery('#interchange-slide div:eq(1)').fadeIn('1000');
+            jQuery(this).fadeOut(1000);
+            jQuery(this).appendTo('#interchange-slide');
+        });
+    }, 2000);
+
     function between (x, y, z) {
         if ((z >= x) && (z <= y)) {
             return true;
