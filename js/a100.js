@@ -75,11 +75,11 @@ jQuery(document).ready(function(){
         // console.log(ScrollState());
         var status = ScrollState();
 
-        // if ($(window).scrollTop() > 75) {
-        //     jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
-        // } else {
-        //     jQuery(".submenu").css({'position':'relative'});
-        // }
+        if ($(window).scrollTop() > 75) {
+            jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
+        } else {
+            jQuery(".submenu").css({'position':'relative'});
+        }
 
         lastScrollX = $(window).scrollTop();
 
@@ -215,7 +215,7 @@ jQuery(document).ready(function(){
                 _x = jQuery(this).offset().top - _h + "px";
 
                 jQuery(this).find('.scrollWindow').css({
-                    "top" : "-206px"
+                    "top" : "-260px"
                 });
             }
 
