@@ -42,6 +42,8 @@ jQuery(document).ready(function(){
 	jQuery('#tabContentWrap li .open').css('height','290px');
 	jQuery('#tabContentWrap .mapList').click(function(){
 		var clicked = jQuery(this);
+		if(clicked.hasClass('open')) 
+			return;
 		// close previous opened 
 		clicked.parent().find('.open').animate({
 			'height': 70
