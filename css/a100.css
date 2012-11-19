@@ -152,13 +152,13 @@ h2.interchange-title{
 .media {
     width:  1600px;
     height: 1400px;
-    background: url(../img/products/media/media-bg.jpg) no-repeat center center;
+    background: url(../img/products/a100/media-bg.jpg) no-repeat center center;
 }
 
 .application-papers {
     width:  1600px;
     height: 1400px;
-    background: url(../img/products/application-papers/applicationPapers-bg.jpg) repeat 0 0;
+    background: url(../img/products/a100/appp-bg.jpg) repeat 0 0;
 }
 
 .technical-specifications {
