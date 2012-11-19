@@ -22,14 +22,12 @@ body.a100 {
     z-index: 9999;
     width: 100%;
 }
-
 .submenu ul {
     width: 980px;
     height: 45px;
     margin: 0 auto;
     padding: 0 0;
 }
-
 .submenu li {
     list-style: none;
     float: left;
@@ -38,14 +36,11 @@ body.a100 {
     font-family:Arial, Helvetica, sans-serif;
     font-size: 12px;
     color:#fff;
-
 }
-
 .submenu li a {
     width: 100px;
     height: 100px;
     color:#fff;
-
 }
 .submenu li.deviceTitle{
     font-weight: bold;
@@ -64,6 +59,9 @@ body.a100 {
     color: red;
 }
 
+.a100 section{
+    overflow: visible;
+}
 /* Defined Section */
 .overview {
     width:  1600px;
@@ -100,7 +98,7 @@ body.a100 {
     font-size: 35px;
     left: 200px;
 }
-#openLayout-slide>div{
+#openLayout-slide>div {
     width: 467px;
     height: 526px;
     position: absolute;
@@ -120,45 +118,47 @@ body.a100 {
     background: url(../img/products/a100/interchange-bg.jpg) center center #000;
 }
 
-.interchange-a100{
-    width: 815px;
-    height: 768px;
-    background: url(../img/products/a100/interchange-a100.png) center;
-    position: absolute;
-    top: 0px;
-    left: 170px;
-}
 h2.interchange-title{
     position: absolute;
-    top: 450px;
+    top: 425px;
     font-family:'BaskervilleURW-RegIta', serif;
     font-weight: normal;
     color: white;
     margin: 0;
-    width: 380px;
-    font-size: 35px;
+    width: 365px;
+    font-size: 30px;
+    line-height: 40px;
     left: 350px;
 }
 .interchange-text{
     position: absolute;
-    top: 550px;
+    top: 505px;
     left: 350px;
     color: white;
-    width: 380px;
+    width: 365px;
     font-family: 'Univers-CondensedLight', sans-serif;
     font-size: 18px;
+}
+#interchange-slide>div {
+    width: 1168px;
+    height: 764px;
+    position: absolute;
+    left: -34px;
+    top: -92px;
+    background-position: center;
+    display:none;
 }
 
 .media {
     width:  1600px;
     height: 1400px;
-    background: url(../img/products/media/media-bg.jpg) no-repeat center center;
+    background: url(../img/products/a100/media-bg.jpg) no-repeat center center;
 }
 
 .application-papers {
     width:  1600px;
     height: 1400px;
-    background: url(../img/products/application-papers/applicationPapers-bg.jpg) repeat 0 0;
+    background: url(../img/products/a100/appp-bg.jpg) repeat 0 0;
 }
 
 .technical-specifications {
@@ -181,18 +181,18 @@ h2.interchange-title{
     height: 580px;  
 }
 
-.a100 {
+.overview-a100 {
     width: 326px;
     height: 455px;
     background: url(../img/products/a100/a100.png) 0 0 no-repeat;
     position: absolute;
     top: 10px;
-    left: 20px;    
-    /*text-indent: -9999px;*/
+    left: 80px;    
+    text-indent: -9999px;
 }
 .a100-title {
     top: 45px;
-    left: 550px;
+    left: 520px;
     position: absolute;
     text-align: center;
 }
@@ -254,7 +254,7 @@ h2.interchange-title{
    background: url(../img/products/a100/redDot.png) no-repeat center; 
    position: absolute;
    top: 0;
-   right: 85px;
+   right: 145px;
 }
 .mesurement {
     width: 300px;
@@ -335,7 +335,7 @@ h2.interchange-title{
 #system-bg ol li {
     font-family: 'Univers-CondensedLight', sans-serif;
     font-size: 28px;
-    color: #fff;
+    /*color: #fff;*/
     list-style-position: inside;
 }
 .system-a100{
@@ -344,95 +344,53 @@ h2.interchange-title{
     background: url(../img/products/a100/system-a100.png) no-repeat center center;
     position: absolute;
 }
-
-.laptop {
-    width: 746px;
-    height: 549px;
-    background: url(../img/products/m150/features/realtime/laptop.png) 0 0;
-    position: absolute;
-    top: 30px;
-    left: 800px;
-    opacity: 0;
-}
-
-.m150-rt {
-    width: 598px;
-    height: 517px;
-    background: url(../img/products/m150/features/realtime/m150.png) 0 0;
-    position: absolute;
-    top: 30px;
-    left: -400px;
-    opacity: 0;
-}
-
-.zarraw {
-    width: 731px;
-    height: 288px;
-    background: url(../img/products/m150/features/realtime/Zarrow.png) 0 0;
-    position: absolute;
-    top: 164px;
-    left: 140px;
-    opacity: 0;
-}
-
-.CCD-wrap {
-    position: relative;
-    top: 300px;
-}
-
-.realtime {
-    width: 1600px;
-    height: 1639px;
-    background: url(../img/products/m150/features/realtime/realtime_bg.jpg) 0 0 no-repeat;
+.system-mark{
+    width: 557px;
+    height: 645px;
     position: absolute;
 }
-
-.realtime-headline {
-    top: 180px;
-    left: 810px;
-    position: absolute;
-    font-size: 60px;
-    width: 400px;
-    font-family: 'BaskervilleURW-RegIta', serif;
+#system-mark1{
+    background: url(../img/products/a100/a.png) no-repeat 0 0;
+}
+#system-mark2{
+    background: url(../img/products/a100/b.png) no-repeat 0 0;
+}
+#system-mark3{
+    background: url(../img/products/a100/c.png) no-repeat 0 0;
+}
+#system-mark4{
+    background: url(../img/products/a100/d.png) no-repeat 0 0;
+}
+#system-mark5{
+    background: url(../img/products/a100/e.png) no-repeat 0 0;
 }
 
-.realtime-text {
-    top: 285px;
-    left: 10px;
-    width: 295px;
-    position: absolute;
-    font-size: 20px;
-    text-align: center;
-    font-family: 'Univers-CondensedLight', sans-serif;
-}
-.product .fft.scrollWindow{
-    background: url(../img/products/fft.jpg) no-repeat 0 0;
-    width:570px;
-    top:0;
-    position:relative;
-}
-.fft-wrap.textWindow{
-    height: 100%;
-    background: #3a3a3a;
-    margin-left: 570px;
-}
 .applications {
     width:  1600px;
     height: 1400px;
-    background: url(../img/products/m150/features/applications-bg.jpg) no-repeat 0 0;
-    
+    background: url(../img/products/a100/app-bg.jpg) no-repeat 0 0;
 }
 .application-text{
    width: 460px; 
-   float: right;
-   margin-top: 180px;
-   margin-right: 135px;
+   position: absolute;
+   left: 253px;
 }
 .application-text>p{
     color: #000;
     font-family: 'BaskervilleURW-RegIta', serif;
     font-size: 26px;
     text-align:center;
+}
+#application-bg{
+    background: url(../img/products/a100/app-bg.jpg) 0 0;
+}
+.application-a100{
+    background: url(../img/products/a100/app-a100.png) 0 0;
+    position: absolute;
+    width: 994px;
+    height: 1158px;
+    top: -303px;
+    left: 0px;
 }
 .components{
     /*height: 1000px;*/
@@ -445,6 +403,7 @@ h2.interchange-title{
     height: 100%;
     background-color:#3A3A3A;
 }
+
 .media-content h2{
     font-size: 30px;
     font-family: 'BaskervilleURW-RegIta', serif;
@@ -550,24 +509,24 @@ h2.interchange-title{
 .media-content .galleryBox ul#itemContainer-ap li:hover{
     /*background: rgba(150,150,150,0.5);*/
     border: solid 1px #636363;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 3px #000;
     /* webkit example */
     background-image: -webkit-gradient(
-      linear, left top, left bottom, from(rgba(120, 120, 120, 0.5)),
-      to(rgba(0, 0, 0, 0.8))
+      linear, left top, left bottom, from(rgba(120, 120, 120, 1)),
+      to(rgba(0, 0, 0, 1))
     );
     /* mozilla example - FF3.6+ */
     background-image: -moz-linear-gradient(
       top center,
-      rgba(120, 120, 120, 0.5) 0%, rgba(0, 0, 0, 0.8) 99%
+      rgba(120, 120, 120, 1) 0%, rgba(0, 0, 0, 1) 99%
     );
     /* IE 5.5 - 7 */
     filter: progid:DXImageTransform.Microsoft.gradient(
-      gradientType=1, startColor=rgba(120, 120, 120, 0.5), endColorStr=rgba(0, 0, 0, 0.8)
+      gradientType=1, startColor=rgba(120, 120, 120, 1), endColorStr=rgba(0, 0, 0, 1)
     );
     /* IE8 uses -ms-filter for whatever reason... */
     -ms-filter: progid:DXImageTransform.Microsoft.gradient(
-      gradientType=1, startColor=rgba(120, 120, 120, 0.5), endColoStr=rgba(0, 0, 0, 0.8)
+      gradientType=1, startColor=rgba(120, 120, 120, 1), endColoStr=rgba(0, 0, 0, 1)
     );
 }
 .media-content .galleryBox ul#itemContainer-ap li a{
@@ -581,7 +540,7 @@ h2.interchange-title{
     background: url(../img/products/application-papers/pdfIcon.png) no-repeat 20px 16px;
 }
 .technical-specifications .content-wrap-580{
-    background: url(../img/products/technical/tech-m150.png) no-repeat 0 60px;
+    background: url(../img/products/a100/technical-a100.png) no-repeat 60px 60px;
 }
 .technical-content h2{
     font-family: 'BaskervilleURW-RegIta', serif;
