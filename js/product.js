@@ -167,7 +167,9 @@ jQuery(document).ready(function(){
 
                 }
                 //jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
+
                 jQuery("body, html").scrollTop(Goto[destinationIndex]);
+
                 activeLayer = destinationIndex;
                 return false;
             });
@@ -291,7 +293,7 @@ jQuery(document).ready(function(){
     //ScrollDown Animation
     //
     window.setInterval(function() {
-        jQuery('.scrolldown_arrow').css('background','url(img/products/scrollDown_arrow_' + curImgId + '.png)');
+        jQuery('.scrolldown_arrow').css('background','url('+base_url+'img/products/scrollDown_arrow_' + curImgId + '.png)');
         curImgId = (curImgId +1) % numberOfImages;
     }, 200);
 
