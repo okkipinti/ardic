@@ -12,18 +12,16 @@ jQuery(document).ready(function(){
                     });
                     jQuery("#overlayBG").fadeIn("slow");
                 }
+            }).mouseleave(function() {
+                if (isAnimate == false) {
+                    isAnimate = true;
+                    // console.log("productLeave");
+                    jQuery("#product-info").slideUp('slow', function(){
+                        isAnimate = false;
+                    });
+                    jQuery("#overlayBG").fadeOut("slow");
+                }
             });
-            // .mouseleave(function() {
-            //     if (isAnimate == false) {
-            //         isAnimate = true;
-            //         // console.log("productLeave");
-            //         jQuery("#product-info").slideUp('slow', function(){
-            //             isAnimate = false;
-            //         });
-            //         jQuery("#overlayBG").fadeOut("slow");
-            //     }
-            // })
-            // ;
 /* end  Product Navigation Dropdown */
 
     jQuery("#backToTop").click(function(){

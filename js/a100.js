@@ -57,20 +57,20 @@ jQuery(document).ready(function(){
             jQuery(".submenu").css({'position':'relative'});
         }
 
-        //  需要加入判斷當 scrollTop <= 0 就不需要去計算.
-        // if (currentScrollX <= 0) {
-        //     activeLayer = 0;
-        //     isAnimatingTo = false;
-        //     return;
-        // }
+         需要加入判斷當 scrollTop <= 0 就不需要去計算.
+        if (currentScrollX <= 0) {
+            activeLayer = 0;
+            isAnimatingTo = false;
+            return;
+        }
 
-        // if (currentScrollX == Goto[activeLayer]) {
-        //     return;
-        // }
+        if (currentScrollX == Goto[activeLayer]) {
+            return;
+        }
 
-        // if (isAnimatingTo == true) {
-        //     return false;
-        // }
+        if (isAnimatingTo == true) {
+            return false;
+        }
 
         // console.log(ScrollState());
         var status = ScrollState();

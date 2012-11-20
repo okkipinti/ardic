@@ -60,7 +60,7 @@ body.product {
     padding-left:20px;
     padding-right:20px
 }
-.submenu a:hover {
+.submenu a:hover, .submenu a.current {
     color: red;
 }
 
