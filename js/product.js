@@ -9,21 +9,42 @@ var numberOfImages = 5; // Change this to the number of background images
 var Goto = new Array();
 Goto.push(0);
 Goto.push(4200);
-Goto.push(8700);
+Goto.push(8700); //features
 Goto.push(10266);
 Goto.push(11766);
+Goto.push(13200); //
 Goto.push(15566);
-Goto.push(17500);
-Goto.push(24700);
-Goto.push(27100);
-Goto.push(28500);
-Goto.push(36233);
-Goto.push(43200);
-Goto.push(45800);
-Goto.push(48566);
-Goto.push(50000);
-Goto.push(52500);
-Goto.push(62500);
+Goto.push(17500); //CCD
+Goto.push(24700); //CCD1
+Goto.push(27100); //CCD2
+Goto.push(28500); //realtime
+Goto.push(36000); //
+Goto.push(39600); //fft
+Goto.push(49130); //applications
+Goto.push(51300); //components
+Goto.push(53630); //media
+Goto.push(54930); //application-paper
+Goto.push(56630); //technical-specification
+
+var NavSection = new Array();
+NavSection.push(0);
+NavSection.push(0);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(1);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(3);
+NavSection.push(4);
+NavSection.push(5);
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -90,7 +111,7 @@ jQuery(document).ready(function(){
                 if (activeLayer < 0) {
                     activeLayer = 0;
                 }
-                // Snapping();
+                Snapping();
                 //console.log("0. activeLayer = " + activeLayer);
             }
             return;
@@ -103,7 +124,7 @@ jQuery(document).ready(function(){
                 if (activeLayer > Goto.length - 1) {
                     activeLayer = Goto.length - 1;
                 }
-                // Snapping();
+                Snapping();
                 //console.log("2. activeLayer = " + activeLayer);
             }
             return;
@@ -113,12 +134,44 @@ jQuery(document).ready(function(){
 
     //  submenu
     jQuery(".submenu ul li").each(function(index, value){
-        if (index != 0)
+        if (index != 0){
             jQuery(this).children().click(function(){
-                // console.log(Goto[index - 1]);
-                jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
+                var destinationIndex;
+                jQuery(".submenu ul li a").removeClass("current");
+                switch (index)
+                {
+                    case 1: //overview
+                    destinationIndex = 0;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 2: //features
+                    destinationIndex = 2;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 3: //applications
+                    destinationIndex = 13;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 4: //media
+                    destinationIndex = 15
+                    jQuery(this).addClass("current");
+                    break;
+                    case 5: //appli papers
+                    destinationIndex = 16;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 6: //tech specifications
+                    destinationIndex = 17;
+                    jQuery(this).addClass("current");
+                    break;
+
+                }
+                //jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
+                jQuery("body, html").scrollTop(Goto[destinationIndex]);
+                activeLayer = destinationIndex;
                 return false;
             });
+        }  
     });
 
     function Snapping () {
@@ -127,10 +180,10 @@ jQuery(document).ready(function(){
                 isAnimatingTo = true;
                 jQuery("body, html").animate({"scrollTop" : Goto[activeLayer]}, 
                     {
-                        quenu : false, 
+                        queue : false, 
                         step : function () {
                             //console.log("activeLayer = " + activeLayer);
-                            isAnimatingTo = true;
+                            isAnimatingTo = true;                                                    
                         }, 
                         //Speed Me
                         duration : 900, complete : function(){
@@ -141,6 +194,7 @@ jQuery(document).ready(function(){
                             //  console.log('complete.activeLayer = ' + activeLayer);
                             lastScrollX = jQuery(window).scrollTop();
                             // jQuery(window).bind('scroll');
+                            jQuery(".submenu ul li a").removeClass("current").eq(NavSection[activeLayer]).addClass("current");                            
                         }
                     }
                 );
