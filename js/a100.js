@@ -6,23 +6,27 @@ var PRODUCT_WAPPER_MARGIN_TOP     = 0
 var curImgId = 1;
 var numberOfImages = 5; // Change this to the number of background images
 
-// var Goto = new Array();
-// Goto.push(0);
-// Goto.push(4200);
-// Goto.push(8700);
-// Goto.push(10266);
-// Goto.push(11766);
-// Goto.push(15566);
-// Goto.push(17500);
-// Goto.push(24700);
-// Goto.push(27100);
-// Goto.push(28500);
-// Goto.push(36233);
-// Goto.push(43200);
-// Goto.push(45800);
-// Goto.push(48566);
-// Goto.push(50000);
-// Goto.push(52500);
+var Goto = new Array();
+Goto.push(0);
+
+Goto.push(5500); //features
+Goto.push(8650); //interchange
+Goto.push(12500); //system
+Goto.push(19900); //applications
+Goto.push(25900); //media
+Goto.push(27700); //appli papers
+Goto.push(29900); //technical-specifications
+
+var NavSection = new Array();
+NavSection.push(0);
+
+NavSection.push(1); //features
+NavSection.push(1); //interchange
+NavSection.push(1); //system
+NavSection.push(2); //applications
+NavSection.push(3); //media
+NavSection.push(4); //appli papers
+NavSection.push(5); //technical-specifications
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -51,13 +55,13 @@ jQuery(document).ready(function(){
         currentScrollX = jQuery(window).scrollTop();
 
         //  這是控制 submenu 中的 position
-        if ($(window).scrollTop() > 75) {
+        if (jQuery(window).scrollTop() > 75) {
             jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
         } else {
             jQuery(".submenu").css({'position':'relative'});
         }
 
-         需要加入判斷當 scrollTop <= 0 就不需要去計算.
+        // 需要加入判斷當 scrollTop <= 0 就不需要去計算.
         if (currentScrollX <= 0) {
             activeLayer = 0;
             isAnimatingTo = false;
@@ -75,77 +79,122 @@ jQuery(document).ready(function(){
         // console.log(ScrollState());
         var status = ScrollState();
 
-        if ($(window).scrollTop() > 75) {
-            jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
-        } else {
-            jQuery(".submenu").css({'position':'relative'});
+
+        console.log(status);
+
+        lastScrollX = jQuery(window).scrollTop();
+
+        if (status == "UP") {
+            if (isAnimatingTo == false) {
+                activeLayer--;
+                if (activeLayer < 0) {
+                    activeLayer = 0;
+                }
+                Snapping();
+                console.log("0. activeLayer = " + activeLayer);
+            }
+            return;
         }
 
-        lastScrollX = $(window).scrollTop();
-
-        // if (status == "UP") {
-        //     if (isAnimatingTo == false) {
-        //         activeLayer--;
-        //         if (activeLayer < 0) {
-        //             activeLayer = 0;
-        //         }
-        //         Snapping();
-        //         console.log("0. activeLayer = " + activeLayer);
-        //     }
-        //     return;
-        // }
-
-        // if (status == "DOWN") {
-        //     if (isAnimatingTo == false) {
-        //         // console.log("1. activeLayer = " + activeLayer);
-        //         activeLayer++;
-        //         if (activeLayer > Goto.length - 1) {
-        //             activeLayer = Goto.length - 1;
-        //         }
-        //         Snapping();
-        //         console.log("2. activeLayer = " + activeLayer);
-        //     }
-        //     return;
-        // }
+        if (status == "DOWN") {
+            if (isAnimatingTo == false) {
+                // console.log("1. activeLayer = " + activeLayer);
+                activeLayer++;
+                if (activeLayer > Goto.length - 1) {
+                    activeLayer = Goto.length - 1;
+                }
+                Snapping();
+                console.log("2. activeLayer = " + activeLayer);
+            }
+            return;
+        }
 
     }); //end scroll
 
-    //submenu
+    //  submenu
     jQuery(".submenu ul li").each(function(index, value){
-        if (index != 0)
+        if (index != 0){
             jQuery(this).children().click(function(){
-                // console.log(Goto[index - 1]);
-                jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
+                var destinationIndex;
+                jQuery(".submenu ul li a").removeClass("current");
+                switch (index)
+                {
+                    case 1: //overview
+                    destinationIndex = 0;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 2: //features
+                    destinationIndex = 1;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 3: //applications
+                    destinationIndex = 4;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 4: //media
+                    destinationIndex = 5;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 5: //appli papers
+                    destinationIndex = 6;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 6: //tech specifications
+                    destinationIndex = 7;
+                    jQuery(this).addClass("current");
+                    break;
+
+                }
+                //jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
+                jQuery("body, html").scrollTop(Goto[destinationIndex]);
+                activeLayer = destinationIndex;
                 return false;
             });
+        }  
     });
 
-    // function Snapping () {
-    //     if (MrTimer == 0)
-    //         MrTimer = window.setInterval(function(){
-    //             isAnimatingTo = true;
-    //             jQuery("body, html").animate({"scrollTop" : Goto[activeLayer]}, 
-    //                 {
-    //                     quenu : false, 
-    //                     step : function () {
-    //                         console.log("activeLayer = " + activeLayer);
-    //                         isAnimatingTo = true;
-    //                     }, 
-    //                     //Speed Me
-    //                     duration : 900, complete : function(){
-    //                         // console.log('complete');
-    //                         isAnimatingTo = false;
-    //                         currentLayer = activeLayer;
-    //                         MrTimer = 0;
-    //                         console.log('complete.activeLayer = ' + activeLayer);
-    //                         lastScrollX = jQuery(window).scrollTop();
-    //                         // jQuery(window).bind('scroll');
-    //                     }
-    //                 }
-    //             );
-    //             window.clearInterval(MrTimer);
-    //     }, 1);
-    // }
+    function Snapping () {
+
+        console.log("MrTimer = " + MrTimer);
+
+        var X = 0;
+
+        if (MrTimer == 0)
+            MrTimer = window.setInterval(function(){
+
+                console.log("step 1");
+
+                X = MrTimer;
+
+                isAnimatingTo = true;
+
+                jQuery("body, html").animate({"scrollTop" : Goto[activeLayer]}, 
+                    {
+                        queue : false, 
+                        step : function () {
+                            //console.log("activeLayer = " + activeLayer);
+                            console.log("step 2");
+                            //isAnimatingTo = true;
+                        }, 
+                        //Speed Me
+                        duration : 900, complete : function(){
+                            // console.log('complete');
+                            isAnimatingTo = false;
+                            currentLayer = activeLayer;
+                            MrTimer = 0;
+                            // console.log('complete.activeLayer = ' + activeLayer);
+                            lastScrollX = jQuery(window).scrollTop();
+                            // jQuery(window).bind('scroll');
+                            jQuery(".submenu ul li a").removeClass("current").eq(NavSection[activeLayer]).addClass("current");                            
+                            console.log("step 3");
+                        }
+                    }
+                );
+//console.log(X);
+                window.clearInterval(X);
+
+            }, 1);
+    }
 
     function resize () {
 
@@ -228,9 +277,9 @@ jQuery(document).ready(function(){
         });
     } //end resize()
 
-    window.setInterval(function(){
-        console.log('window.scrollTop = ' + $(window).scrollTop());
-    }, 1000);
+    // window.setInterval(function(){
+    //     console.log('window.scrollTop = ' + $(window).scrollTop());
+    // }, 1000);
 
     //
     //ScrollDown Animation
@@ -276,7 +325,6 @@ jQuery(document).ready(function(){
         }
         return (currentScrollX > lastScrollX) ? "DOWN" : "UP";
     }
-
 
 
 });
