@@ -28,7 +28,7 @@ jQuery(document).ready(function(){
                  "display" : ""
                 ,"opacity" : "0.7"
 				,"z-index" : "99999997"
-            }, { quenu : false, step : function () {
+            }, { queue : false, step : function () {
                 jQuery(".product-arrar").attr('src', 'img/productArrowRed.png');
                 jQuery("#product-info").slideDown('slow', function(){
                 });

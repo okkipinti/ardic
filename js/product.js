@@ -91,7 +91,7 @@ jQuery(document).ready(function(){
                     activeLayer = 0;
                 }
                 // Snapping();
-                console.log("0. activeLayer = " + activeLayer);
+                //console.log("0. activeLayer = " + activeLayer);
             }
             return;
         }
@@ -104,7 +104,7 @@ jQuery(document).ready(function(){
                     activeLayer = Goto.length - 1;
                 }
                 // Snapping();
-                console.log("2. activeLayer = " + activeLayer);
+                //console.log("2. activeLayer = " + activeLayer);
             }
             return;
         }
@@ -129,7 +129,7 @@ jQuery(document).ready(function(){
                     {
                         quenu : false, 
                         step : function () {
-                            console.log("activeLayer = " + activeLayer);
+                            //console.log("activeLayer = " + activeLayer);
                             isAnimatingTo = true;
                         }, 
                         //Speed Me
@@ -138,7 +138,7 @@ jQuery(document).ready(function(){
                             isAnimatingTo = false;
                             currentLayer = activeLayer;
                             MrTimer = 0;
-                            console.log('complete.activeLayer = ' + activeLayer);
+                            //console.log('complete.activeLayer = ' + activeLayer);
                             lastScrollX = jQuery(window).scrollTop();
                             // jQuery(window).bind('scroll');
                         }
