@@ -97,12 +97,6 @@ jQuery(document).ready(function(){
         // console.log(ScrollState());
         var status = ScrollState();
 
-        if ($(window).scrollTop() > 75) {
-            jQuery(".submenu").css({'position':'fixed', 'top':'0px'});
-        } else {
-            jQuery(".submenu").css({'position':'relative'});
-        }
-
         lastScrollX = $(window).scrollTop();
 
         if (status == "UP") {
@@ -189,7 +183,7 @@ jQuery(document).ready(function(){
                         }, 
                         //Speed Me
                         duration : 900, complete : function(){
-                            // console.log('complete');
+                            console.log('complete');
                             isAnimatingTo = false;
                             currentLayer = activeLayer;
                             MrTimer = 0;

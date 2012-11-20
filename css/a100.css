@@ -10,8 +10,8 @@ body.a100 {
     /*overflow: hidden;*/
 }
 .a100 #main{
-    margin-bottom:0;
-    padding-bottom: 0;
+    /*margin-bottom:0;
+    padding-bottom: 0;*/
 }
 #main nav{
     position:relative;
@@ -55,7 +55,7 @@ body.a100 {
     padding-left:20px;
     padding-right:20px
 }
-.submenu a:hover {
+.submenu a:hover, .submenu a.current {
     color: red;
 }
 
