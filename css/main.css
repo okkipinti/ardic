@@ -546,8 +546,8 @@ footer{
 }
 .headquote{
     text-align: center; 
-    margin-top: 75px;
-    background: url(../img/quoteShortLines.png) no-repeat left center, url(../img/quoteShortLines.png) no-repeat right center;
+    padding-top: 75px;
+    background: url(../img/quoteShortLines.png) no-repeat left 105px, url(../img/quoteShortLines.png) no-repeat right 105px;
 }
 .headquote h3{
     font-family: "BaskervilleURW-RegIta", serif;
@@ -623,7 +623,7 @@ footer{
 }
 #careerSlide{
     width:293px;
-    height: 295px;
+    height: 200px;
     overflow: hidden;
     position: relative;
     margin-left: 20px;
@@ -923,7 +923,7 @@ footer{
     /*border-style : hidden;*/
     /*border-width:0px;*/
     z-index:99999998;
-    opacity: 0.3;
+    opacity: 0.7;
     /*filter: 'alpha(opacity=30)';*/
     /**filter: alpha(opacity=30);*/
     display: none;
