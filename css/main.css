@@ -169,7 +169,6 @@ nav{
 }
 nav ul{
     height: 69px;
-    margin:0;
     /*background-color: #fff;*/
     margin-left: 100px;
     background-repeat: no-repeat;
@@ -181,6 +180,7 @@ nav ul li{
     float: left;
     list-style: none;
     margin-right:45px;
+    height:100%;
     /*padding:30px 35px 0 0;*/
 }
 nav ul li.nav-subscribe{
@@ -950,9 +950,10 @@ footer{
     background-color: #f8f8f8;
     /*border-style: solid;*/
     /*border-width: 1px;*/
-    position: fixed;
+    position: absolute;
     /*float: left;*/
     top: 75px;
+    left:0;
     /*display: block;*/
     z-index: 99999999;
     display: none;
@@ -975,11 +976,14 @@ footer{
 #product-info ul {
     list-style: none;
     width: 100%;
+    margin:0;
 }
 #product-info li {
     float: left;
+    margin-right:0;
 }
 .product-preview a {
+    padding:0;
     width: 161px;
     height: 140px;
     margin: 20px 60px 20px 0;
@@ -988,6 +992,10 @@ footer{
     color: black;
     font-weight: bold;
     font-size: 9px;
+    font-family: "Arial";
+}
+.product-preview a:hover{
+    background:none;
 }
 .product-preview img {
     margin: 0 0 10px 0;

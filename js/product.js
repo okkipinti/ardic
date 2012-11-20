@@ -138,7 +138,7 @@ jQuery(document).ready(function(){
                             isAnimatingTo = false;
                             currentLayer = activeLayer;
                             MrTimer = 0;
-                            //console.log('complete.activeLayer = ' + activeLayer);
+                            //  console.log('complete.activeLayer = ' + activeLayer);
                             lastScrollX = jQuery(window).scrollTop();
                             // jQuery(window).bind('scroll');
                         }

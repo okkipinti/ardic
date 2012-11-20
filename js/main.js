@@ -1,55 +1,28 @@
-var is_open = false;
-var is_hover = false;
+var isAnimate = false;
 
 jQuery(document).ready(function(){
-
-    jQuery("#product-info").hover(function(){
-        is_open = true;
-    }, function(){
-        is_open = false;
-    });
-
-    jQuery("nav ul li").each(function(index, value){
-        if (index == 0) {
-            jQuery(this).children("a").hover(function(){
-                is_hover = true;
-            }, function(){
-                is_hover = false;
+/*  Product Navigation Dropdown */
+         jQuery(".nav-product")         
+            .mouseenter(function(){
+                if (isAnimate == false) {
+                    isAnimate = true;
+                    // console.log("productHoverd");
+                    jQuery("#product-info").slideDown('slow', function(){
+                        isAnimate = false;
+                    });
+                    jQuery("#overlayBG").fadeIn("slow");
+                }
+            }).mouseleave(function() {
+                if (isAnimate == false) {
+                    isAnimate = true;
+                    // console.log("productLeave");
+                    jQuery("#product-info").slideUp('slow', function(){
+                        isAnimate = false;
+                    });
+                    jQuery("#overlayBG").fadeOut("slow");
+                }
             });
-        } else {
-
-        }
-    });
-
-    var ProductSlide = window.setInterval(function(){
-        //console.log('is_hover = ' + is_hover + ' is_open  = ' + is_open);
-        if (is_hover == true) {
-            $("#overlayBG").show().animate({
-                 "display" : ""
-                ,"opacity" : "0.7"
-				,"z-index" : "99999997"
-            }, { queue : false, step : function () {
-                jQuery(".product-arrar").attr('src', 'img/productArrowRed.png');
-                jQuery("#product-info").slideDown('slow', function(){
-                });
-            }, duration : 800, complete : function () {
-            }});
-
-        } else {
-            if (is_open == false) {
-                $("#overlayBG").animate({
-                     "display" : ""
-                    ,"opacity" : "0"
-					,"z-index" : "-1"
-                }, { quenu : false, step : function () {
-                    jQuery("#product-info").slideUp('slow', function(){  });
-                }, duration : 300, complete : function () {
-                    jQuery(".product-arrar").attr('src', 'img/productArrow.png');
-                }});
-
-            }
-        }
-    }, 600);
+/* end  Product Navigation Dropdown */
 
     jQuery("#backToTop").click(function(){
         jQuery("html body").animate({
