@@ -8,22 +8,30 @@ var numberOfImages = 5; // Change this to the number of background images
 
 var Goto = new Array();
 Goto.push(0);
-
 Goto.push(5500); //features
 Goto.push(8650); //interchange
-Goto.push(12500); //system
-Goto.push(19900); //applications
+Goto.push(13800); //system-a
+Goto.push(14500); //b
+Goto.push(15500); //c
+Goto.push(16500); //d
+Goto.push(17500); //e
+Goto.push(21000); //applications
+Goto.push(23000);
 Goto.push(25900); //media
 Goto.push(27700); //appli papers
 Goto.push(29900); //technical-specifications
 
 var NavSection = new Array();
 NavSection.push(0);
-
 NavSection.push(1); //features
 NavSection.push(1); //interchange
-NavSection.push(1); //system
+NavSection.push(1); //system-a
+NavSection.push(1); //b
+NavSection.push(1); //c
+NavSection.push(1); //d
+NavSection.push(1); //e
 NavSection.push(2); //applications
+NavSection.push(2);
 NavSection.push(3); //media
 NavSection.push(4); //appli papers
 NavSection.push(5); //technical-specifications
@@ -128,19 +136,19 @@ jQuery(document).ready(function(){
                     jQuery(this).addClass("current");
                     break;
                     case 3: //applications
-                    destinationIndex = 4;
+                    destinationIndex = 9;
                     jQuery(this).addClass("current");
                     break;
                     case 4: //media
-                    destinationIndex = 5;
+                    destinationIndex = 11;
                     jQuery(this).addClass("current");
                     break;
                     case 5: //appli papers
-                    destinationIndex = 6;
+                    destinationIndex = 12;
                     jQuery(this).addClass("current");
                     break;
                     case 6: //tech specifications
-                    destinationIndex = 7;
+                    destinationIndex = 13;
                     jQuery(this).addClass("current");
                     break;
 

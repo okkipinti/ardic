@@ -7,19 +7,21 @@ jQuery(document).ready(function(){
                 if (isAnimate == false) {
                     isAnimate = true;
                     // console.log("productHoverd");
+                    jQuery("#overlayBG").fadeIn("slow");
                     jQuery("#product-info").slideDown('slow', function(){
                         isAnimate = false;
                     });
-                    jQuery("#overlayBG").fadeIn("slow");
+                    
                 }
             }).mouseleave(function() {
                 if (isAnimate == false) {
                     isAnimate = true;
                     // console.log("productLeave");
+                    jQuery("#overlayBG").fadeOut("slow");
                     jQuery("#product-info").slideUp('slow', function(){
                         isAnimate = false;
                     });
-                    jQuery("#overlayBG").fadeOut("slow");
+                    
                 }
             });
 /* end  Product Navigation Dropdown */
