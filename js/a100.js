@@ -122,7 +122,8 @@ jQuery(document).ready(function(){
     //  submenu
     jQuery(".submenu ul li").each(function(index, value){
         if (index > 0){
-            jQuery(this).children().click(function(){
+            jQuery(this).children().click(function(e){
+                e.preventDefault();
                 var destinationIndex;
                 jQuery(".submenu ul li a").removeClass("current");
                 switch (index)
