@@ -7,7 +7,8 @@ var curImgId = 1;
 var numberOfImages = 5; // Change this to the number of background images
 
 var Goto = new Array();
-Goto.push(0);
+Goto.push(0); //overview
+Goto.push(100); //overview
 Goto.push(5500); //features
 Goto.push(8650); //interchange
 Goto.push(13800); //system-a
@@ -22,6 +23,7 @@ Goto.push(27700); //appli papers
 Goto.push(29900); //technical-specifications
 
 var NavSection = new Array();
+NavSection.push(1); //overview
 NavSection.push(1);
 NavSection.push(2); //features
 NavSection.push(2); //interchange
@@ -133,11 +135,11 @@ jQuery(document).ready(function(){
                     jQuery(this).addClass("current");
                     break;
                     case 1: //overview
-                    destinationIndex = 0;
+                    destinationIndex = 1;
                     jQuery(this).addClass("current");
                     break;
                     case 2: //features
-                    destinationIndex = 1;
+                    destinationIndex = 2;
                     jQuery(this).addClass("current");
                     break;
                     case 3: //applications
