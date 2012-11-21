@@ -12,7 +12,7 @@ Goto.push(4200);
 Goto.push(8700); //features
 Goto.push(10266);
 Goto.push(11766);
-Goto.push(13200); //
+Goto.push(13025); //xyz
 Goto.push(15566);
 Goto.push(17500); //CCD
 Goto.push(24700); //CCD1

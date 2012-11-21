@@ -7,7 +7,8 @@ var curImgId = 1;
 var numberOfImages = 5; // Change this to the number of background images
 
 var Goto = new Array();
-Goto.push(0);
+Goto.push(0); //overview
+Goto.push(100); //overview
 Goto.push(5500); //features
 Goto.push(8650); //interchange
 Goto.push(13800); //system-a
@@ -22,19 +23,20 @@ Goto.push(27700); //appli papers
 Goto.push(29900); //technical-specifications
 
 var NavSection = new Array();
-NavSection.push(0);
-NavSection.push(1); //features
-NavSection.push(1); //interchange
-NavSection.push(1); //system-a
-NavSection.push(1); //b
-NavSection.push(1); //c
-NavSection.push(1); //d
-NavSection.push(1); //e
-NavSection.push(2); //applications
-NavSection.push(2);
-NavSection.push(3); //media
-NavSection.push(4); //appli papers
-NavSection.push(5); //technical-specifications
+NavSection.push(1); //overview
+NavSection.push(1);
+NavSection.push(2); //features
+NavSection.push(2); //interchange
+NavSection.push(2); //system-a
+NavSection.push(2); //b
+NavSection.push(2); //c
+NavSection.push(2); //d
+NavSection.push(2); //e
+NavSection.push(3); //applications
+NavSection.push(3);
+NavSection.push(4); //media
+NavSection.push(5); //appli papers
+NavSection.push(6); //technical-specifications
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -121,18 +123,23 @@ jQuery(document).ready(function(){
 
     //  submenu
     jQuery(".submenu ul li").each(function(index, value){
-        if (index != 0){
-            jQuery(this).children().click(function(){
+        if (index > 0){
+            jQuery(this).children().click(function(e){
+                e.preventDefault();
                 var destinationIndex;
                 jQuery(".submenu ul li a").removeClass("current");
                 switch (index)
                 {
-                    case 1: //overview
+                    case 0: //overview
                     destinationIndex = 0;
                     jQuery(this).addClass("current");
                     break;
-                    case 2: //features
+                    case 1: //overview
                     destinationIndex = 1;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 2: //features
+                    destinationIndex = 2;
                     jQuery(this).addClass("current");
                     break;
                     case 3: //applications
