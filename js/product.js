@@ -27,24 +27,24 @@ Goto.push(54930); //application-paper
 Goto.push(56630); //technical-specification
 
 var NavSection = new Array();
-NavSection.push(0);
-NavSection.push(0);
 NavSection.push(1);
 NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
-NavSection.push(1);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(2);
+NavSection.push(2);
 NavSection.push(2);
 NavSection.push(2);
 NavSection.push(3);
+NavSection.push(3);
 NavSection.push(4);
 NavSection.push(5);
+NavSection.push(6);
 
 var activeLayer = 0;
 var currentScrollX = 0;
@@ -128,12 +128,16 @@ jQuery(document).ready(function(){
 
     //  submenu
     jQuery(".submenu ul li").each(function(index, value){
-        if (index != 0){
-            jQuery(this).children().click(function(){
+        if (index > 0){
+            jQuery(this).children().click(function(e){ e.preventDefault();
                 var destinationIndex;
                 jQuery(".submenu ul li a").removeClass("current");
                 switch (index)
                 {
+                    case 0: //overview
+                    destinationIndex = 0;
+                    jQuery(this).addClass("current");
+                    break;
                     case 1: //overview
                     destinationIndex = 0;
                     jQuery(this).addClass("current");
@@ -181,7 +185,7 @@ jQuery(document).ready(function(){
                         }, 
                         //Speed Me
                         duration : 900, complete : function(){
-                            console.log('complete');
+                            //console.log('complete');
                             isAnimatingTo = false;
                             currentLayer = activeLayer;
                             MrTimer = 0;
