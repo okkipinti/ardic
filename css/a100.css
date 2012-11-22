@@ -186,7 +186,7 @@ h2.interchange-title{
     height: 455px;
     background: url(../img/products/a100/a100.png) 0 0 no-repeat;
     position: absolute;
-    top: 10px;
+    top: 45px;
     left: 80px;    
     text-indent: -9999px;
 }
@@ -253,7 +253,7 @@ h2.interchange-title{
    height: 91px;
    background: url(../img/products/a100/redDot.png) no-repeat center; 
    position: absolute;
-   top: 0;
+   top: 65px;
    right: 145px;
 }
 .mesurement {
