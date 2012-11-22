@@ -38,19 +38,28 @@ body.product {
     font-family:Arial, Helvetica, sans-serif;
     font-size: 12px;
     color:#fff;
-
 }
 
 .submenu li a {
     width: 100px;
     height: 100px;
     color:#fff;
-
 }
 .submenu li.deviceTitle{
     font-weight: bold;
     font-size:20px;
     margin-top:8px
+}
+.submenu li a#backToTop{
+    background: url(../img/backTop.png) no-repeat center right;
+    width: 57px;
+    height: 27px;
+    padding: 4px 28px 4px 0px;
+    color: #ddd;
+}
+.submenu li a#backToTop:hover{
+    background: url(../img/backTop-hover.png) no-repeat center right;
+    color: #fff;
 }
 .submenu li.quote{
     border-left:1px solid #636363;
@@ -361,11 +370,10 @@ body.product {
     text-align: center;
     font-family: 'Univers-CondensedLight';
 }
-
 .autofocus {
     /*width: 300px;*/
     /*height: 1000px;*/
-    background: url(../img/products/m150/features/xyz/autofocus.jpg) 0 0;
+    background: url(../img/products/m150/features/xyz/autofocus.jpg) -205px 0;
     position: absolute;
     top: -1px;
     left: 1304px;
@@ -374,7 +382,6 @@ body.product {
     position: absolute;
     top: 480px;
     left: 150px;
-
 }
 .autofocus-wrap {
     background-color:#3A3A3A;
@@ -447,7 +454,7 @@ body.product {
 .ccd02 {
     /*width: 300px;*/
     /*height: 1000px;*/
-    background: url(../img/products/m150/features/ccd/ccd2.jpg) -66px;
+    background: url(../img/products/m150/features/ccd/ccd2.jpg) -205px;
     position: absolute;
     top: 0px;
     left: 1304px;

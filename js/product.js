@@ -164,7 +164,10 @@ jQuery(document).ready(function(){
                     destinationIndex = 18;
                     jQuery(this).addClass("current");
                     break;
-
+                    case 7: //back to top
+                    destinationIndex = 0;
+                    jQuery(".submenu ul li:first-child").addClass("current");
+                    break;
                 }
                 //jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
                 jQuery("body, html").scrollTop(Goto[destinationIndex]);
