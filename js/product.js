@@ -8,6 +8,7 @@ var numberOfImages = 5; // Change this to the number of background images
 
 var Goto = new Array();
 Goto.push(0);
+Goto.push(1100);
 Goto.push(4200);
 Goto.push(8700); //features
 Goto.push(10266);
@@ -27,6 +28,7 @@ Goto.push(54930); //application-paper
 Goto.push(56630); //technical-specification
 
 var NavSection = new Array();
+NavSection.push(1);
 NavSection.push(1);
 NavSection.push(1);
 NavSection.push(2);
@@ -143,26 +145,29 @@ jQuery(document).ready(function(){
                     jQuery(this).addClass("current");
                     break;
                     case 2: //features
-                    destinationIndex = 2;
+                    destinationIndex = 3;
                     jQuery(this).addClass("current");
                     break;
                     case 3: //applications
-                    destinationIndex = 13;
+                    destinationIndex = 14;
                     jQuery(this).addClass("current");
                     break;
                     case 4: //media
-                    destinationIndex = 15
+                    destinationIndex = 16
                     jQuery(this).addClass("current");
                     break;
                     case 5: //appli papers
-                    destinationIndex = 16;
-                    jQuery(this).addClass("current");
-                    break;
-                    case 6: //tech specifications
                     destinationIndex = 17;
                     jQuery(this).addClass("current");
                     break;
-
+                    case 6: //tech specifications
+                    destinationIndex = 18;
+                    jQuery(this).addClass("current");
+                    break;
+                    case 7: //back to top
+                    destinationIndex = 0;
+                    jQuery(".submenu ul li:first-child").addClass("current");
+                    break;
                 }
                 //jQuery("body").animate({ scrollTop: Goto[index - 1] }, 1000);
 
